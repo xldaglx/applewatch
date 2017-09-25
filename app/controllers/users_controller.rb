@@ -21,6 +21,21 @@ class UsersController < ApplicationController
   def edit
   end
 
+    def login
+       @user = User.find_by(email: params[:param1])
+       respond_to do |format|
+          format.html
+          format.json { render json: @user }
+        end
+=begin
+      if @user.present?
+        format.json{render status:'ok'}
+      else  
+        format.json{render json:@user}
+      end
+=end
+    end
+
   # POST /users
   # POST /users.json
   def create
