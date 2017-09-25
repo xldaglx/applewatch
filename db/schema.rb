@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170925152206) do
     t.integer  "qtycorrea"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
     t.string   "name"

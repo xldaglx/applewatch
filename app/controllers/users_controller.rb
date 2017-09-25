@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
     def login
        @user = User.find_by(email: params[:param1])
+       cookies[:user] = params[:param1]
        respond_to do |format|
           format.html
           format.json { render json: @user }
