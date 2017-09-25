@@ -1,19 +1,26 @@
+
 <div class="row">
-	<div class="col-md-3 col-md-offset-2">
-		<h1>Login</h1>
+	<div class="col-md-1"></div>
+	<div class="col-md-3 login">
+		<p>Ingresa con tu número AA:</p>
 				<form class="loginForm">
 					<div class="input-group">
-						<input type="text" id="name" class="form-control" placeholder="aaXXXXX">
-						<input type="button" id="submit" class="form-control" value="Submit">
+						<input type="text" id="name" class="form-control campo-login" placeholder="aaXXXXX">
+						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
 					</div>
 				</form>
 	</div>
-	<div class="col-md-6">
-		<p>jasdjasjdas</p>
-		<p>jasdjasjdas</p>
-		<p>jasdjasjdas</p>
-		<p>jasdjasjdas</p>
-		<p>jasdjasjdas</p>
+	<div class="col-md-1"></div>
+	<div class="col-md-6 instrucciones-login">
+		<h1>INSTRUCCIONES</h1>
+		<p>
+			1.- Ingresa con tu número <strong>“AA”</strong> a la <b>Subasta Best Buy</b>.<br>
+			2.- Revisa la lista de modelos y selecciona el que más te agrade.<br>
+			3.- A continuación estarás en el detalle del producto donde podrás ver las especificaciones y el precio incial del mismo.<br>
+			4.- En el detalle del producto podrás seleccionar si lo quieres <strong>“CON Correa”</strong> o <strong>“SIN Correa”</strong>, y ofertar por el que más te agrade. <br>
+			5.- Lo único que debes hacer es ingresar la cantidad que ofreces por el modelo que te gustó y dar click en el botón de <strong>“Ofertar”</strong>.<br>
+			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.
+		<p>
 	</div>
 </div>
 
@@ -37,8 +44,8 @@ function consulta(){
 			if(data!==null){
 				window.location.replace("/products");
 			}else{
-				alert('Lo sentimos :(, no tienes acceso');
-			}		
+				alert('Lo sentimos :(, por favor verifica si tu Número AA es correcto.');
+			}	
 		}
 	});
 }

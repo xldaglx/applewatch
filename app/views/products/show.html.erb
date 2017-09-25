@@ -1,21 +1,82 @@
+<div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="alerta-roja">Por favor ingresa una cantidad para ofrecer.</div>
+    </div>
+    <a href="/products"><span class="glyphicon glyphicon-chevron-left"></span>Regresar al listado</a>
+    <div class="row detalle-info">
+      <div class="col-md-10 col-md-offset-1">
+        <h2><%= @product.name %></h2>
+        <div class="row detalles">
+          <div class="col-md-5">
+            <%= image_tag @product.image, class:"img-responsive img-detalle" %>
+            <br>
+            <%= @product.description %>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+            <div class="bloques precio-inicial border-inf">
+               <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> Este Apple Watch tiene: <strong><%= @product.auctions.count %></strong> Ofertas hasta ahora</span>
+               <br>
+               <span class="tus-ofertas">- <%= auctionExists(cookies[:user], @product.id) %></span>
+               <div class="precios-iniciales">
+                <div class="precio">
+                  <b>Precio Inicial CON Correa</b><br>
+                  <span>$<%= @product.price.to_i %></span>
+                </div>
+                <div class="precio">
+                  <b>Precio Inicial SIN Correa</b><br>
+                  <span>$<%= @product.price_correa.to_i %></span>
+                </div>
+               </div>
+            </div>
 
-  <%= @product.id %>
-  <%= @product.name %>
-  <%= @product.description %>
-  <%= image_tag @product.image %>
-  <div class="price"><%= @product.price.to_i %></div>
-  <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
-  <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
-  <input type="hidden" id="idProduct" value="<%= @product.id %>">
-  <h5>Con correa</h5>
-  Si <input type="radio" name="correa" class="radiova" value="si" checked="checked">
-  No <input type="radio" name="correa" class="radiova" value="no">
+            <div class="bloques border-inf">
+              <p><b>Modelos:</b></p>
+              <input type="radio" name="correa" class="radiova" value="si" checked="checked"> <b>CON Correa</b>
+              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b>SIN Correa</b>
+            </div>
 
-  <input type="number" value="" class="oferta" id="monto" placeholder="Monto a ofertar">
-  <input type="number" value="<%= @product.price.to_i %>" id="pricea" placeholder="Monto a ofertar" disabled="disabled">
-  <input type="button" class="btn btn-primary" id="ofertar" value="OFertar"> 
+            <div class="bloques">
+              <p>
+                <b>Cantidad a ofrecer</b>
+                <br>
+                Ingresa la cantidad que deseas ofrecer por este Apple Watch:
+              </p>
+              <input type="number" value="" class="oferta campo-login" placeholder="Monto a ofertar">
+              <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
+            </div>
 
+            <!--div class="price"><%= @product.price.to_i %></div>
+            <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
+            <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
+            <input type="number" value="<%= @product.price.to_i %>" id="pricea" placeholder="Monto a ofertar"-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2 style="border-bottom: 1px solid #e6e7e7;padding-bottom:10px;">CARACTERÍSTICAS GENERALES</h2>
+            <ul>
+                <li><b>Marca:</b> Apple</li>
+                <li><b>Color:</b> Gris</li>
+                <li><b>Tipo de Apple Watch:</b> Deportivo</li>
+                <li><b>Tamaño de Pantalla:</b> OLED - 272 x 340 p, Vidrio Ion-X</li>
+                <li><b>Material de la Correa:</b> Pulsera deportiva de Fluoroelastómero</li>
+                <li><b>Conectividad:</b> IEEE 802.11b/g/n, Bluetooth 4.0</li>
+                <li><b>Duración de la Batería:</b> Hasta 18 horas</li>
+                <li><b>Resistencia al agua:</b> Resistente al agua hasta 50 metros</li> 
+                <li><b>Alto:</b> 3.8 cm</li>
+                <li><b>Ancho:</b> 3.3 cm</li>
+                <li><b>Profundidad:</b> 11.4 cm </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+  
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     $('.radiova').click(function(event) {
