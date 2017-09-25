@@ -27,7 +27,7 @@
   </div>
 
 
-  <%#= f.file_field :image, label: "Sube tu imagen (opcional)" %>
+  <%= f.file_field :image, label: "Sube tu imagen (opcional)" %>
 
 
   <div class="field">
@@ -39,6 +39,8 @@
     <%= f.label :qty %>
     <%= f.number_field :qty %>
   </div>
+    <%= f.label :qtycorrea %>
+    <%= f.number_field :qtycorrea %>
 
   <div class="actions">
     <%= f.submit %>

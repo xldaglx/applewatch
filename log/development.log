@@ -708,3 +708,1838 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 325ms (Views: 316.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 09:58:57 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendered auctions/index.html.erb within layouts/application (63.6ms)
+Completed 200 OK in 118ms (Views: 107.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:03:27 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendered auctions/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:03:29 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendered auctions/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 83ms (Views: 79.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:03:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:03:41 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (23.1ms)
+  Rendered products/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:04:41 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.3ms)
+  Rendered products/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:05:14 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (0.8ms)
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/views/products/_form.html.erb:16: syntax error, unexpected keyword_class, expecting ')'
+...pend=( f.text_field :name class: 'form-control');@output_buf...
+...                               ^):
+  
+app/views/products/_form.html.erb:16: syntax error, unexpected keyword_class, expecting ')'
+app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___4069356052775006800_70130826977660'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:05:21 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.6ms)
+  Rendered products/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:05:28 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.5ms)
+  Rendered products/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-25 10:05:37 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3hDLOKWNFzHCKYd226P9FO7Plocj02hRXWbQj8YiaNvBXhREhbsYgv+Ew2WleviR6iZQqrqqXXdeiau30Y/sA==", "product"=>{"name"=>"ger", "description"=>"ger", "price"=>"123", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f91371344b0 @tempfile=#<Tempfile:/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/RackMultipart20170925-35347-th6vzg.png>, @original_filename="screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png\"\r\nContent-Type: image/png\r\n">, "price_correa"=>"234", "qty"=>"234"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'image' for Product.):
+  
+app/controllers/products_controller.rb:27:in `create'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+Started POST "/products" for 127.0.0.1 at 2017-09-25 10:08:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3hDLOKWNFzHCKYd226P9FO7Plocj02hRXWbQj8YiaNvBXhREhbsYgv+Ew2WleviR6iZQqrqqXXdeiau30Y/sA==", "product"=>{"name"=>"ger", "description"=>"ger", "price"=>"123", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff633a933d8 @tempfile=#<Tempfile:/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/RackMultipart20170925-36795-1jwl7lw.png>, @original_filename="screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png\"\r\nContent-Type: image/png\r\n">, "price_correa"=>"234", "qty"=>"234"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.5ms)
+
+
+  
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  
+app/controllers/products_controller.rb:27:in `create'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.5ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:09:01 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 262ms (Views: 260.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:09:02 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (20.4ms)
+  Rendered products/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-25 10:09:10 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ZR9blAw5AJ/lDZkz2LByfgKxzAI3u7yRmD2Zd1oY1VgRcxt9zcmX0wQQhKH72F0eEesXYDVgpf8+Dvj/lb7UA==", "product"=>{"name"=>"sdf", "description"=>"sdf", "price"=>"234", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff631e10d00 @tempfile=#<Tempfile:/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/RackMultipart20170925-36795-1wdo1w7.png>, @original_filename="screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png\"\r\nContent-Type: image/png\r\n">, "price_correa"=>"234", "qty"=>"234"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  
+app/controllers/products_controller.rb:27:in `create'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.0ms)
+Started POST "/products" for 127.0.0.1 at 2017-09-25 10:11:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ZR9blAw5AJ/lDZkz2LByfgKxzAI3u7yRmD2Zd1oY1VgRcxt9zcmX0wQQhKH72F0eEesXYDVgpf8+Dvj/lb7UA==", "product"=>{"name"=>"sdf", "description"=>"sdf", "price"=>"234", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe208043b38 @tempfile=#<Tempfile:/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/RackMultipart20170925-37107-1afe99s.png>, @original_filename="screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png\"\r\nContent-Type: image/png\r\n">, "price_correa"=>"234", "qty"=>"234"}, "commit"=>"Create Product"}
+Command :: file -b --mime '/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/37e68b7056efbea2f579bfbd74c772e520170925-37107-14vvw8h.png'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/37e68b7056efbea2f579bfbd74c772e520170925-37107-wvn106.png'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `products` (`name`, `description`, `price`, `price_correa`, `qty`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('sdf', 'sdf', '234', '234', 234, '2017-09-25 15:11:23', '2017-09-25 15:11:23', 'screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png', 'image/png', 2558851, '2017-09-25 15:11:23')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/3
+Completed 302 Found in 64ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-09-25 10:11:23 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 261ms (Views: 256.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 10:12:53 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:16:07 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (41.6ms)
+  Rendered products/new.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 94ms (Views: 92.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-25 10:17:33 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 82ms (Views: 76.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('115508168020273350', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddQtycorreaToProducts (20170925152206)
+  [1m[35m (135.9ms)[0m  [1m[35mALTER TABLE `products` ADD `qtycorrea` int[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170925152206')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('115508168020273350')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (2.0ms)[0m  [1m[35mSHOW CREATE TABLE `auctions`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'products'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+Started GET "/products/new" for 127.0.0.1 at 2017-09-25 10:23:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (19.3ms)
+  Rendered products/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 288ms (Views: 265.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-25 10:37:44 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n/e9yi/BgJY0IjwuFZRbqFwsGSSBfRdc3fI3nLqR+XqXioa330FYqPjUiT5Ybz++SD++PDcY84hF/YpwWs9PaQ==", "product"=>{"name"=>"Apple - Apple Watch Series 1 de 42 mm con Cuerpo de Aluminio y Correa Deportiva Negro - Gris Espacial | Apple Watch", "description"=>" DESCRIPCIÓN Te da la información que te interesa cuando y donde la necesitas. Te ayuda a hacer las tareas de siempre más rápido que nunca. Te conecta al instante con la gente y las cosas que más te importan.", "price"=>"1499", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fdb92adf708 @tempfile=#<Tempfile:/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/RackMultipart20170925-37990-zb4zv8.png>, @original_filename="Screen Shot 2017-09-25 at 10.16.39 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"Screen Shot 2017-09-25 at 10.16.39 AM.png\"\r\nContent-Type: image/png\r\n">, "price_correa"=>"899", "qty"=>"5", "qtycorrea"=>"3"}, "commit"=>"Create Product"}
+Command :: file -b --mime '/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/64acfbab4fb3d28b16ed6be95f888c6f20170925-37990-zd5do9.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/34/_mg8nqzs1_551jym22g621q4cj_jx2/T/64acfbab4fb3d28b16ed6be95f888c6f20170925-37990-8px8ji.png'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `products` (`name`, `description`, `price`, `price_correa`, `qty`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `qtycorrea`) VALUES ('Apple - Apple Watch Series 1 de 42 mm con Cuerpo de Aluminio y Correa Deportiva Negro - Gris Espacial | Apple Watch', ' DESCRIPCIÓN Te da la información que te interesa cuando y donde la necesitas. Te ayuda a hacer las tareas de siempre más rápido que nunca. Te conecta al instante con la gente y las cosas que más te importan.', '1499', '899', 5, '2017-09-25 15:37:44', '2017-09-25 15:37:44', 'Screen_Shot_2017-09-25_at_10.16.39_AM.png', 'image/png', 194008, '2017-09-25 15:37:44', 3)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/4
+Completed 302 Found in 36ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:37:44 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 82ms (Views: 75.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:37:47 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/products/1" for 127.0.0.1 at 2017-09-25 10:38:46 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4rqcQlMYirbogJYjeYdxIuX+vP17DgXElL5/BlDjyUbqx6c/o5hSiCR2IzM0fBU08e0b5c1r4RAMscLqsL1/VQ==", "id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 3.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`applewatch`.`auctions`, CONSTRAINT `fk_rails_67147375d2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)): DELETE FROM `products` WHERE `products`.`id` = 1):
+  
+app/controllers/products_controller.rb:57:in `destroy'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.8ms)
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:39:04 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendered auctions/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 75ms (Views: 65.5ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/auctions/1" for 127.0.0.1 at 2017-09-25 10:39:07 -0500
+Processing by AuctionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"msBfSJ7lErjYrpKOZz68Z7Wlt/SOuyX1RfJ/E/0zY6qSvWQ1bmXKhhRYJ54qxdhxobYQ7DjewSHd/cL/HW3VuQ==", "id"=>"1"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM `auctions` WHERE `auctions`.`id` = 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/auctions
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:39:07 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  Rendered auctions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:39:07 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  Rendered auctions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:39:10 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/products/1" for 127.0.0.1 at 2017-09-25 10:39:13 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2nHcQkyu7cqL8u/hu6OEIMStxHc3Gvu1aCPmKgbT16/SDOc/vC419EcEWvH2WOA20L5jb4F/H2HwLFvG5o1hvA==", "id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:39:13 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/products/2" for 127.0.0.1 at 2017-09-25 10:39:15 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U1mE8awbBbAciy4fTKuWrtxLKppl47TOlFKK/qZ3uPtbJL+MXJvdjtB9mw8BUPK4yFiNgtOGUBoMXTcSRikO6A==", "id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 2[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:39:15 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products/3" for 127.0.0.1 at 2017-09-25 10:39:17 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"llEYhEj3P0cpi8Vv8paHsId4HsZWtfOmResgl9LJJ9ieLCP5uHfneeV9cH+/beOmk2u53uDQF3Ld5J17MpeRyw==", "id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 3[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[paperclip] deleting /Users/aa321936/Sites/applewatchgit/public/system/products/images/000/000/003/original/screencapture-admin-bestbuy-mx-index-php-admin-system_config-edit-section-carriers-key-a49910f5b81bf004770614d54350e6bc7d2c29567ea2ba727af8e4664a55b57b-1505947181744.png
+Redirected to http://0.0.0.0:3000/products
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:39:17 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:41:06 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:41:18 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/system/products/images/000/000/004/%7Bproducts=%3E%22img-responsive%22%7D/Screen_Shot_2017-09-25_at_10.16.39_AM.png?1506353864" for 127.0.0.1 at 2017-09-25 10:41:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/products/images/000/000/004/%7Bproducts=%3E%22img-responsive%22%7D/Screen_Shot_2017-09-25_at_10.16.39_AM.png"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (8.1ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (96.3ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:41:24 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:41:33 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:41:55 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:43:44 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `auction' for #<Product:0x007fdb9adb1a50>
+Did you mean?  auctions
+               auctions=):
+    4:       <div class="col-md-3">
+    5:           <h6><%= product.name %></h6>
+    6:           <%= image_tag product.image, class:'img-responsive'%>
+    7:           Este producto tiene <%= product.auction.count %>
+    8:       </div>
+    9:     <% end %>
+   10: </div>
+  
+app/views/products/index.html.erb:7:in `block in _app_views_products_index_html_erb___3129237630212714882_70290576361980'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290576361980'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.0ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:43:50 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:43:59 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:44:19 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-09-25 10:44:25 -0500
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions`[0m
+  Rendered auctions/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2017-09-25 10:44:26 -0500
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/_form.html.erb (2.5ms)
+  Rendered auctions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2017-09-25 10:44:37 -0500
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m+KFo9M9LdeK4NU3wvkrNyzVxyS6zCy6mXKSnPAvEFkwQXUPCCozJgPVMw8UXFolfc7roJUiRWD7ZNf8zHpetQ==", "auction"=>{"user_id"=>"1", "product_id"=>"4", "amount"=>"55"}, "commit"=>"Create Auction"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 4, 55, '2017-09-25 15:44:37', '2017-09-25 15:44:37')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/auctions/2
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/auctions/2" for 127.0.0.1 at 2017-09-25 10:44:37 -0500
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`id` = 2 LIMIT 1[0m
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendered auctions/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auctions/2" for 127.0.0.1 at 2017-09-25 10:44:38 -0500
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`id` = 2 LIMIT 1[0m
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendered auctions/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auctions/2" for 127.0.0.1 at 2017-09-25 10:44:39 -0500
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`id` = 2 LIMIT 1[0m
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendered auctions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 61ms (Views: 57.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:44:43 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:45:24 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:45:25 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:45:28 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:45:38 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2017-09-25 10:45:41 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.9ms)
+  Rendered products/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:45:43 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:49:26 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:49:52 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 10:50:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 10:51:31 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:02:37 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:04:16 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 64ms (Views: 57.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:04:31 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (223.6ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007fdb9c9dbb18>:0x007fdb9db33b90>):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists(user, product.id) %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290610176740'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290610176740'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.9ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:04:42 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:04:56 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:14:11 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE (user) LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'user' in 'where clause': SELECT  `auctions`.* FROM `auctions` WHERE (user) LIMIT 1):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:3:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290609489500'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290609489500'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.5ms)
+Started GET "/users" for 127.0.0.1 at 2017-09-25 11:15:25 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2017-09-25 11:15:30 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2017-09-25 11:15:34 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0bOo2t9fi7ocDnkhKOQgxKzkdf4AQX71hVC0QmVKUBa9Lpbeti4Wjx3cfTNd+vgHRm0zEVrxCd25DifS7PP7Rg==", "user"=>{"email"=>"aa321936", "name"=>"gerardoa", "middle"=>"Ayala"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `email` = 'aa321936', `updated_at` = '2017-09-25 16:15:34' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-25 11:15:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:15:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Auction:0x007fdb96cfd6a8>):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:5:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290582768380'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290582768380'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.9ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:17:09 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Unsupported argument type: #<User:0x007fdb9249b6f8> (User)):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:4:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290551415500'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290551415500'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.1ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:17:29 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Auction:0x007fdb9789b1e0>):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:5:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290577724900'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290577724900'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.0ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:18:23 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 70ms (Views: 63.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:18:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Auction:0x007fdb9a1b2c68>):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:6:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290581479140'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290581479140'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.3ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:20:31 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 74ms (Views: 68.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:21:38 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (277.9ms)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `button' for #<#<Class:0x007fdb96d97898>:0x007fdb96d96420>
+Did you mean?  button_to):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <% auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:8:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290576146680'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290576146680'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:21:52 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:22:13 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:22:33 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (39.1ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `html_safe' for 2:Fixnum
+Did you mean?  html_safe?):
+     5:           <h6><%= product.name %></h6>
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <%= auctionExists("user", "produc.id") %>
+     9:       </div>
+    10:     <% end %>
+    11: </div>
+  
+app/helpers/products_helper.rb:9:in `auctionExists'
+app/views/products/index.html.erb:8:in `block in _app_views_products_index_html_erb___3129237630212714882_70290579424720'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290579424720'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.6ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:22:51 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 98ms (Views: 90.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:23:19 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 76ms (Views: 69.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:23:30 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 77ms (Views: 70.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:24:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 79ms (Views: 72.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:24:49 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:26:50 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <br>
+     9:           <%= auctionExists("user", "produc.id") %>
+    10:       </div>
+    11:     <% end %>
+    12: </div>
+  
+app/helpers/products_helper.rb:3:in `auctionExists'
+app/views/products/index.html.erb:9:in `block in _app_views_products_index_html_erb___3129237630212714882_70290515023140'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290515023140'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.0ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:27:01 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 97ms (Views: 89.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:28:23 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:29:44 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (257.4ms)
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cookie' for #<#<Class:0x007fdb96eb4ca8>:0x007fdb9aea3788>
+Did you mean?  cookies):
+     6:           <a href="products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+     7:           <%= product.auctions.count %> Ofertas hasta el momento
+     8:           <br>
+     9:           <%= auctionExists(cookie[user], product.id) %>
+    10:       </div>
+    11:     <% end %>
+    12: </div>
+  
+app/views/products/index.html.erb:9:in `block in _app_views_products_index_html_erb___3129237630212714882_70290553285500'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___3129237630212714882_70290553285500'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:30:05 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` IS NULL AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:30:30 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` IS NULL AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 83ms (Views: 74.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:30:32 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 62ms (Views: 58.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-25 11:30:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 87ms (Views: 78.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-25 11:30:57 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:31:34 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:31:51 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/products/4" for 127.0.0.1 at 2017-09-25 11:31:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/products/products/4"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (9.1ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.5ms)
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:32:02 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:32:02 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:32:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:32:35 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:32:36 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:32:47 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:32:48 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:32:49 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-09-25 11:33:01 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 4[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa321936' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 4[0m
+  Rendered products/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1510ms (Views: 1506.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:33:04 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:34:54 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:35:04 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/views/products/show.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+...number_format8@product.price) );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/products/show.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.9ms)
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:35:22 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 99ms (Views: 96.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:36:16 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:36:47 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:37:16 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:37:33 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:37:35 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:39:35 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:39:50 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:40:07 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:40:17 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:40:31 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:40:46 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:41:24 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:42:30 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:43:27 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:43:38 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:44:06 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:44:32 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:46:36 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:48:27 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:48:38 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:49:10 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (224.5ms)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x007fdb9ae327b8>:0x007fdb94668588>
+Did you mean?  @product):
+    10:   No <input type="radio" name="correa" class="radiova" value="no">
+    11: 
+    12:   <input type="number" value="" class="oferta" placeholder="Monto a ofertar">
+    13:   <input type="number" value="<%= product.price.to_i + @product.price_correa.to_i %>" id="pricea" placeholder="Monto a ofertar">
+    14:   <input type="button" class="btn btn-primary" id="ofertar"> 
+    15:   
+    16: <script type="text/javascript">
+  
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__977562989940980177_70290532158640'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.7ms)
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:49:27 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:49:56 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:50:32 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:50:33 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:51:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:51:08 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:51:11 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:52:02 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:52:23 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:53:22 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:53:50 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:54:39 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:54:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:55:11 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:55:18 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:56:00 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:56:45 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:56:47 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-25 11:57:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-25 11:57:04 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+

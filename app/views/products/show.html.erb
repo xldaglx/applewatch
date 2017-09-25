@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
   <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @product.description %>
-</p>
+  <%= image_tag @product.image %>
+  <div class="price"><%= @product.price.to_i %></div>
+  <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
+  <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
+  <h5>Con correa</h5>
+  Si <input type="radio" name="correa" class="radiova" value="si" checked="checked">
+  No <input type="radio" name="correa" class="radiova" value="no">
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <input type="number" value="" class="oferta" placeholder="Monto a ofertar">
+  <input type="number" value="<%= @product.price.to_i %>" id="pricea" placeholder="Monto a ofertar">
+  <input type="button" class="btn btn-primary" id="ofertar" value="OFertar"> 
+  
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('.radiova').click(function(event) {
+      if ($(this).val() == "no"){
+        $('.price').text($('#val2').val());
+        $('#pricea').val($('#val2').val());
+      }
+      if ($(this).val() == "si"){
+        $('.price').text($('#val1').val());
+        $('#pricea').val($('#val1').val());
+      }
+    });
+    $('#ofertar').click(function(event) {
+      oferta = $('.oferta').val();
+      precimin = $('#pricea').val();
+      if(parseInt(oferta) < parseInt(precimin)){
+        alert("La ofeta debe ser mayor al precio mínimo");
+      }
 
-<p>
-  <strong>Price correa:</strong>
-  <%= @product.price_correa %>
-</p>
+    });
+  });
+</script>
 
-<p>
-  <strong>Qty:</strong>
-  <%= @product.qty %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
