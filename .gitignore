@@ -22,3 +22,7 @@
 .byebug_history
 
 *.pid
+
+config/database.yml
+
+config/database.yml
