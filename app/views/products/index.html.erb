@@ -1,13 +1,21 @@
 <div class="row">
+  <div class="container">
+    <h1>MODELOS</h1>
+    <p>Selecciona el modelo de <strong>Apple Watch</strong> que mas te agrade:</p>
     <% @products.each do |product| %>
-      <div class="col-md-3">
-          <h6><%= product.name %></h6>
+      <div class="col-md-3 producto-ind">
+        <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
           <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
-          <%= product.auctions.count %> Ofertas hasta el momento
+          
+          <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %></strong> Ofertas hasta ahora</span>
           <br>
-          <%= auctionExists(cookies[:user], product.id) %>
-          <a href="/products/<%= product.id %>" class="btn btn-primary">Hacer oferta</a>
+          <span class="tus-ofertas"><%= auctionExists(cookies[:user], product.id) %></span>
+          <br>
+
+          
+          <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ofertar</a>
       </div>
+  </div>
     <% end %>
 </div>
 
