@@ -19,9 +19,17 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-	$('#submit').click(function(event) {
+	$('#submit').on('keypress click', function(e) {
+		 if (e.which === 13 || e.type === 'click') {
+			consulta();
+		}
+	});
+});
+
+
+function consulta(){
 	var username = $('#name').val();	
-		$.ajax({
+	$.ajax({
 		url: '/login',
 		dataType: 'json',
 		data: {param1: username},
@@ -30,10 +38,9 @@ jQuery(document).ready(function($) {
 				window.location.replace("/products");
 			}else{
 				alert('Lo sentimos :(, no tienes acceso');
-			}
+			}		
 		}
-		});
 	});
-	
-});
+}
+
 </script>
