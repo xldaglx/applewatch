@@ -32,7 +32,7 @@
             <div class="bloques border-inf">
               <p><b>Modelos:</b></p>
               <input type="radio" name="correa" class="radiova" value="si" checked="checked"> <b>CON Correa</b>
-              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b>SIN Correa</b>
+              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b class="radio-txt">SIN Correa</b>
             </div>
 
             <div class="bloques">
@@ -45,10 +45,6 @@
               <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
             </div>
 
-            <!--div class="price"><%= @product.price.to_i %></div>
-            <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
-            <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
-            <input type="number" value="<%= @product.price.to_i %>" id="pricea" placeholder="Monto a ofertar"-->
             <input type="hidden" id="idProducto" value="<%= @product.id %>">
             <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
             <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
@@ -68,6 +64,19 @@
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     $('#alerta-roja').hide();
+    var montoSC = $('#val2').val();
+
+    if(montoSC == '0'){
+      $('.radio-sin').hide();
+      $('.radio-txt').hide();
+      $('#precioSC').hide();  
+    }else{
+      $('.radio-sin').show();
+      $('.radio-txt').show();
+      $('#precioSC').show();  
+    }
+    
+    
     var radio = $('.radiova').val();
     /*if(radio == 'si'){
       $('#precioCC').show();
