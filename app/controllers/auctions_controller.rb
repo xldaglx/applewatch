@@ -21,6 +21,22 @@ class AuctionsController < ApplicationController
   def edit
   end
 
+  def saveAuction
+    @user =  User.find_by(email: cookies[:user])
+    @oferta = params[:param1]
+    @idproducto = params[:param2]
+    @auction = Auction.new(user_id: @user.id,product_id: @idproducto,amount: @oferta)
+    respond_to do |format|
+      if  @auction.save
+        format.html { redirect_to @product, notice: 'Auction was successfully created.' }
+        format.json { render :show, status: :created, location: @product }
+      else
+        format.html { render :new }
+        format.json { render json: @product, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # POST /auctions
   # POST /auctions.json
   def create
