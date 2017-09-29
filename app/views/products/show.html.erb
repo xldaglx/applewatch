@@ -14,40 +14,44 @@
           <div class="col-md-1"></div>
           <div class="col-md-6">
             <div class="bloques precio-inicial border-inf">
-               <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> Este Apple Watch tiene: <strong><%= @product.auctions.count %></strong> Ofertas hasta ahora</span>
+               <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span><strong><%= @product.auctions.count %></strong> Ofertas hasta ahora </span>
                <br>
-               <span class="tus-ofertas">- <%= auctionExists(cookies[:user], @product.id) %></span>
+               <span class="tus-ofertas"><%= auctionExists(cookies[:user], @product.id) %></span>
                <div class="precios-iniciales">
                 <div class="precio" id="precioCC">
-                  <b>Precio Inicial CON Correa</b><br>
-                  <span id="priceCC">$<%= @product.price.to_i %></span>
+                  <b>Precio Inicial</b><br>
+                  <span id="priceCC"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
                 </div>
-                <div class="precio" id="precioSC">
-                  <b>Precio Inicial SIN Correa</b><br>
-                  <span id="priceSC">$<%= @product.price_correa.to_i %></span>
+                <div class="price-auction">
+                <% if @product.auctions.present? %>
+                  Oferta más alta al momento: <span class="max-offer" style="color:red; font-size:14px"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                <% else %>
+                  Oferta más alta al momento: <span class="max-offer" style="color:red; font-size:14px"> Aún no existen ofertas</span>
+                <% end %>
                 </div>
                </div>
             </div>
 
-            <div class="bloques border-inf">
-              <p><b>Modelos:</b></p>
-              <input type="radio" name="correa" class="radiova" value="si" checked="checked"> <b>CON Correa</b>
-              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b class="radio-txt">SIN Correa</b>
-            </div>
-
             <div class="bloques">
               <p>
-                <b>Cantidad a ofrecer</b>
                 <br>
-                Ingresa la cantidad que deseas ofrecer por este Apple Watch:
+                La oferta debe ser <strong>mayor</strong> al precio mínimo. <br><br>Ten en cuenta que para tener más posibilidades de obtener el artículo debes ofertar más de <strong>
+                <% if @product.auctions.present? %>
+                  <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                  <% else %>
+                  <span class="max-offer"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
+                  <% end %></strong>
+              <div class="alert alerta-roja-price" style="display: none;"></div>
               </p>
-              <input type="number" class="oferta campo-login" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
+              <div class="form-off">
+                <b>Cantidad a ofertar</b><br>
+              <input type="number" class="oferta campo-login" step="10" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
               <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
+              </div>
             </div>
 
             <input type="hidden" id="idProducto" value="<%= @product.id %>">
             <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
-            <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
           </div>
         </div>
         <div class="row">
@@ -63,41 +67,45 @@
   
 <script type="text/javascript">
   jQuery(document).ready(function($) {
-    $('#alerta-roja').hide();
-    var montoSC = $('#val2').val();
-
-    if(montoSC == '0'){
-      $('.radio-sin').hide();
-      $('.radio-txt').hide();
-      $('#precioSC').hide();  
-    }else{
-      $('.radio-sin').show();
-      $('.radio-txt').show();
-      $('#precioSC').show();  
-    }
+    var idp = <%= @product.id %> ;
     
-    
-    var radio = $('.radiova').val();
-    /*if(radio == 'si'){
-      $('#precioCC').show();
-      $('#precioSC').hide();
-    }*/
-    
-    $('.radiova').click(function(event) {
-      if ($(this).val() == "no"){
-       /* $('#precioCC').hide();
-        $('#precioSC').show();*/
-        $('.price').text($('#val2').val());
-        $('#pricea').val($('#val2').val());
-      }
-      if ($(this).val() == "si"){
-         /*$('#precioCC').show();
-         $('#precioSC').hide();*/
-         $('.price').text($('#val1').val());
-         $('#pricea').val($('#val1').val());
+  $('#alerta-roja').hide();
+    $('#ofertar').click(function(event) {
+      oferta = $('.oferta').val();
+      preciomin = $('#val1').val();
+      if(parseInt(oferta) < parseInt(preciomin)){
+        $('.alerta-roja-price').show();
+        $('.alerta-roja-price').addClass('alert-danger');
+        $('.alerta-roja-price').text('La ofeta debe ser mayor al precio mínimo');
+      }else{
+        
+        $.ajax({
+          url: '/saveAuction',
+          dataType: 'json',
+          data: {param1: oferta, param2: <%= @product.id %>},
+          success: function(data){
+            $('.max-offer').text("$"+data.price);
+            if(data.message == "success"){
+              $('.form-off').hide();
+              $('.alerta-roja-price').show();
+              $('.alerta-roja-price').removeClass('alert-danger');
+              $('.alerta-roja-price').addClass('alert-success');
+              $('.alerta-roja-price').text('Felicidades, Tu oferta ha sido guardada exitosamente.');
+              $('.alerta-roja-price').append('<ul><li><a href="/products">Ver listado de productos </a></li><li><a href="#" class="offer-nueva">Ofertar nuevamente por este producto </a></li>');
+              //window.location.replace("/products");
+              $('.offer-nueva').click(function(event) {
+                $('form-off').show();
+              });
+            }else{
+              $('#alerta-roja').show();
+              $('#msj').text('Lo sentimos hubo un error, vuelve a intentarlo');
+            }   
+          }
+        });
+        
       }
     });
-
+   
     $('#pricea').keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
@@ -113,49 +121,6 @@
             e.preventDefault();
         }
     });
-
-
-    $('#ofertar').click(function(event) {
-      oferta = $('.oferta').val();
-      preciminCC = parseInt($('#priceCC').text().replace('$',''));
-      preciminSC = parseInt($('#priceSC').text().replace('$',''));
-
-      
-      var preciomin = preciminCC;
-      if(radio == 'no'){
-        preciomin = preciminSC;
-      }
-
-      if(parseInt(oferta) < preciomin){
-        $('#alerta-roja').show();
-        $('#msj').text('La ofeta debe ser mayor al precio mínimo');
-        setTimeout(
-        function() 
-        {
-          $('#alerta-roja').hide();
-        }, 4000);
-      }else{
-        $.ajax({
-          url: '/saveAuction',
-          dataType: 'json',
-          data: {param1: oferta, param2: <%= @product.id %>},
-          success: function(data){
-            if(data!==null){
-              window.location.replace("/products");
-            }else{
-              $('#alerta-roja').show();
-              $('#msj').text('Lo sentimos hubo un error, vuelve a intentarlo');
-              setTimeout(
-              function() 
-              {
-                $('#alerta-roja').hide();
-              }, 4000);
-            }   
-          }
-        });
-      }
-    });
-    
   });
 </script>
 

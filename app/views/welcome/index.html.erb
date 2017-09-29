@@ -7,37 +7,43 @@
 						<p>Usuario:</p>
 						<input type="text" id="name" class="form-control campo-login" placeholder="AAXXXXXX">
 						<p>Email:</p>
-						<input type="text" id="email" class="form-control campo-login" placeholder="username@bestbuy.com">
+						<input type="text" id="email" class="form-control campo-login" placeholder="usuario@bestbuy.com">
 						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
 					</div>
 					&nbsp;
 					<div class="row" id="alerta-roja">
-					  <div class="alerta-roja" id="msg"></div>
+					  <div class="alerta-roja" id="msg" style="display: none;"></div>
 					</div>
-				</form>
 	</div>
 	<div class="col-md-1"></div>
 	<div class="col-md-6 instrucciones-login">
 		<h1>INSTRUCCIONES</h1>
 		<p align="justify">
+
 			1.- Ingresa con tu número <strong>“AA y correo electronico”</strong> a la <b>Subasta Best Buy</b>.<br>
 			2.- Revisa la lista de modelos y selecciona el que más te agrade.<br>
 			3.- A continuación estarás en el detalle del producto donde podrás ver las especificaciones y el precio incial del mismo.<br>
 			4.- En el detalle del producto podrás seleccionar si lo quieres <strong>“CON Correa”</strong> o <strong>“SIN Correa”</strong>, y ofertar por el que más te agrade. <br>
 			5.- Lo único que debes hacer es ingresar la cantidad que ofreces por el modelo que te gustó y dar click en el botón de <strong>“Ofertar”</strong>.<br>
-			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.<br>
-	        7.- El <strong>pago</strong> se realizara a traves de <strong>descuento vía nomina</strong> y podra diferirse en <strong>1 o 2 o 3 catorcenas </strong> dependiendo del monto.
+			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.
+
+			Puja descuento en nómina si es mayor a 3000 lo van a parcializar en 3 catorcenas...
+			De acuerdo a la qty de relojes las pujas más altas serán los ganadores. 
+
+			Recuerda que es para nuestra fiesta de fin de año así como donación a instituciones de beneficencia.  
 		<p>
 	</div>
 </div>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-	$('#msg').hide();
-	$('#submit').on('keypress click', function(e) {
+	$('body').on('keypress', function(e) {
 		 if (e.which === 13 || e.type === 'click') {
 			consulta();
 		}
+	});
+	$('#submit').on('click', function(e) {
+		consulta();
 	});
 });
 
@@ -53,8 +59,7 @@ function consulta(){
 			if(data!==null){
 				window.location.replace("/products");
 			}else{
-				$('#msg').show();
-				$('#msg').html('Lo sentimos, el usuario no existe.');
+				$('#msg').html('Lo sentimos, el usuario no existe.').fadeIn('');
 			}	
 		}
 	});
