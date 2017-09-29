@@ -2,19 +2,23 @@
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-3 login">
-		<p>Ingresa con tu número AA:</p>
+		<p>Ingresa con tu número de empleado:</p>
 				<form class="loginForm">
 					<div class="input-group">
-						<input type="text" id="name" class="form-control campo-login" placeholder="aaXXXXX">
+						<input type="text" id="name" class="form-control campo-login" placeholder="">
 						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
+					</div>
+					&nbsp;
+					<div class="row" id="alerta-roja">
+					  <div class="alerta-roja" id="msg"></div>
 					</div>
 				</form>
 	</div>
 	<div class="col-md-1"></div>
 	<div class="col-md-6 instrucciones-login">
 		<h1>INSTRUCCIONES</h1>
-		<p>
-			1.- Ingresa con tu número <strong>“AA”</strong> a la <b>Subasta Best Buy</b>.<br>
+		<p align="justify">
+			1.- Ingresa con tu número <strong>“Número de Empleado”</strong> a la <b>Subasta Best Buy</b>.<br>
 			2.- Revisa la lista de modelos y selecciona el que más te agrade.<br>
 			3.- A continuación estarás en el detalle del producto donde podrás ver las especificaciones y el precio incial del mismo.<br>
 			4.- En el detalle del producto podrás seleccionar si lo quieres <strong>“CON Correa”</strong> o <strong>“SIN Correa”</strong>, y ofertar por el que más te agrade. <br>
@@ -26,6 +30,7 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+	$('#msg').hide();
 	$('#submit').on('keypress click', function(e) {
 		 if (e.which === 13 || e.type === 'click') {
 			consulta();
@@ -44,7 +49,8 @@ function consulta(){
 			if(data!==null){
 				window.location.replace("/products");
 			}else{
-				alert('Lo sentimos :(, por favor verifica si tu Número AA es correcto.');
+				$('#msg').show();
+				$('#msg').html('Lo sentimos, el usuario no existe.');
 			}	
 		}
 	});

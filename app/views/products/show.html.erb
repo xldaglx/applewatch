@@ -1,7 +1,7 @@
 <div class="row">
   <div class="container">
-    <div class="row">
-      <div class="alerta-roja">Por favor ingresa una cantidad para ofrecer.</div>
+    <div class="row" id="alerta-roja">
+      <div class="alerta-roja" id="msj"></div>
     </div>
     <a href="/products"><span class="glyphicon glyphicon-chevron-left"></span>Regresar al listado</a>
     <div class="row detalle-info">
@@ -10,8 +10,6 @@
         <div class="row detalles">
           <div class="col-md-5">
             <%= image_tag @product.image, class:"img-responsive img-detalle" %>
-            <br>
-            <%= @product.description %>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-6">
@@ -20,13 +18,13 @@
                <br>
                <span class="tus-ofertas">- <%= auctionExists(cookies[:user], @product.id) %></span>
                <div class="precios-iniciales">
-                <div class="precio">
+                <div class="precio" id="precioCC">
                   <b>Precio Inicial CON Correa</b><br>
-                  <span>$<%= @product.price.to_i %></span>
+                  <span id="priceCC">$<%= @product.price.to_i %></span>
                 </div>
-                <div class="precio">
+                <div class="precio" id="precioSC">
                   <b>Precio Inicial SIN Correa</b><br>
-                  <span>$<%= @product.price_correa.to_i %></span>
+                  <span id="priceSC">$<%= @product.price_correa.to_i %></span>
                 </div>
                </div>
             </div>
@@ -34,7 +32,7 @@
             <div class="bloques border-inf">
               <p><b>Modelos:</b></p>
               <input type="radio" name="correa" class="radiova" value="si" checked="checked"> <b>CON Correa</b>
-              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b>SIN Correa</b>
+              <input type="radio" name="correa" class="radiova radio-sin" value="no"> <b class="radio-txt">SIN Correa</b>
             </div>
 
             <div class="bloques">
@@ -43,32 +41,18 @@
                 <br>
                 Ingresa la cantidad que deseas ofrecer por este Apple Watch:
               </p>
-              <input type="number" value="" class="oferta campo-login" placeholder="Monto a ofertar">
+              <input type="number" class="oferta campo-login" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
               <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
             </div>
 
-            <!--div class="price"><%= @product.price.to_i %></div>
+            <input type="hidden" id="idProducto" value="<%= @product.id %>">
             <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
             <input type="hidden" id="val2" value="<%= @product.price_correa.to_i %>">
-            <input type="number" value="<%= @product.price.to_i %>" id="pricea" placeholder="Monto a ofertar"-->
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <h2 style="border-bottom: 1px solid #e6e7e7;padding-bottom:10px;">CARACTERÍSTICAS GENERALES</h2>
-            <ul>
-                <li><b>Marca:</b> Apple</li>
-                <li><b>Color:</b> Gris</li>
-                <li><b>Tipo de Apple Watch:</b> Deportivo</li>
-                <li><b>Tamaño de Pantalla:</b> OLED - 272 x 340 p, Vidrio Ion-X</li>
-                <li><b>Material de la Correa:</b> Pulsera deportiva de Fluoroelastómero</li>
-                <li><b>Conectividad:</b> IEEE 802.11b/g/n, Bluetooth 4.0</li>
-                <li><b>Duración de la Batería:</b> Hasta 18 horas</li>
-                <li><b>Resistencia al agua:</b> Resistente al agua hasta 50 metros</li> 
-                <li><b>Alto:</b> 3.8 cm</li>
-                <li><b>Ancho:</b> 3.3 cm</li>
-                <li><b>Profundidad:</b> 11.4 cm </li>
-            </ul>
+            <%= @product.description.html_safe %>
           </div>
         </div>
       </div>
@@ -77,31 +61,101 @@
 </div>
 
   
-  
-  
-  
-  
-  
 <script type="text/javascript">
   jQuery(document).ready(function($) {
+    $('#alerta-roja').hide();
+    var montoSC = $('#val2').val();
+
+    if(montoSC == '0'){
+      $('.radio-sin').hide();
+      $('.radio-txt').hide();
+      $('#precioSC').hide();  
+    }else{
+      $('.radio-sin').show();
+      $('.radio-txt').show();
+      $('#precioSC').show();  
+    }
+    
+    
+    var radio = $('.radiova').val();
+    /*if(radio == 'si'){
+      $('#precioCC').show();
+      $('#precioSC').hide();
+    }*/
+    
     $('.radiova').click(function(event) {
       if ($(this).val() == "no"){
+       /* $('#precioCC').hide();
+        $('#precioSC').show();*/
         $('.price').text($('#val2').val());
         $('#pricea').val($('#val2').val());
       }
       if ($(this).val() == "si"){
-        $('.price').text($('#val1').val());
-        $('#pricea').val($('#val1').val());
+         /*$('#precioCC').show();
+         $('#precioSC').hide();*/
+         $('.price').text($('#val1').val());
+         $('#pricea').val($('#val1').val());
       }
     });
+
+    $('#pricea').keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+             // Allow: Ctrl+A, Command+A
+            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+             // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+
     $('#ofertar').click(function(event) {
       oferta = $('.oferta').val();
-      precimin = $('#pricea').val();
-      if(parseInt(oferta) < parseInt(precimin)){
-        alert("La ofeta debe ser mayor al precio mínimo");
+      preciminCC = parseInt($('#priceCC').text().replace('$',''));
+      preciminSC = parseInt($('#priceSC').text().replace('$',''));
+
+      
+      var preciomin = preciminCC;
+      if(radio == 'no'){
+        preciomin = preciminSC;
       }
 
+      if(parseInt(oferta) < preciomin){
+        $('#alerta-roja').show();
+        $('#msj').text('La ofeta debe ser mayor al precio mínimo');
+        setTimeout(
+        function() 
+        {
+          $('#alerta-roja').hide();
+        }, 4000);
+      }else{
+        $.ajax({
+          url: '/saveAuction',
+          dataType: 'json',
+          data: {param1: oferta, param2: <%= @product.id %>},
+          success: function(data){
+            if(data!==null){
+              window.location.replace("/products");
+            }else{
+              $('#alerta-roja').show();
+              $('#msj').text('Lo sentimos hubo un error, vuelve a intentarlo');
+              setTimeout(
+              function() 
+              {
+                $('#alerta-roja').hide();
+              }, 4000);
+            }   
+          }
+        });
+      }
     });
+    
   });
 </script>
 
