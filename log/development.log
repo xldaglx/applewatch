@@ -9834,6 +9834,39 @@ Completed 200 OK in 50ms (Views: 42.8ms | ActiveRecord: 0.7ms)
 >>>>>>> 9a72ba4b1bf6a00830d6a38a0c925093d8b6456c
 
 
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2017-09-29 11:35:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 895ms (Views: 868.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login?param1=" for 127.0.0.1 at 2017-09-29 11:35:32 -0500
+Processing by UsersController#login as JSON
+  Parameters: {"param1"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login?param1=aa323174" for 127.0.0.1 at 2017-09-29 11:35:36 -0500
+Processing by UsersController#login as JSON
+  Parameters: {"param1"=>"aa323174"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa323174' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-29 11:35:36 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aa323174' LIMIT 1[0m
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 119ms (Views: 82.5ms | ActiveRecord: 19.3ms)
+=======
 Started GET "/" for 127.0.0.1 at 2017-09-25 12:09:59 -0500
   
 RuntimeError (Cannot load `Rails.application.database_configuration`:
@@ -14265,6 +14298,7 @@ Processing by WelcomeController#index as HTML
   Rendering welcome/index.html.erb within layouts/application
   Rendered welcome/index.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+>>>>>>> 3fbbac5a2db97be5c0811ab6c9e11e2f4d19cf6c
 
 
 Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:10:29 -0500
