@@ -23,19 +23,27 @@
                   <span id="priceCC"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
                 </div>
                 <div class="price-auction">
-                  Oferta más alta al momento <span class="max-offer" style="color:red; font-size:14px"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                <% if @product.auctions.present? %>
+                  Oferta más alta al momento: <span class="max-offer" style="color:red; font-size:14px"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                <% else %>
+                  Oferta más alta al momento: <span class="max-offer" style="color:red; font-size:14px"> Aún no existen ofertas</span>
+                <% end %>
                 </div>
                </div>
             </div>
 
             <div class="bloques">
               <p>
-                <b>Cantidad a ofertar</b>
                 <br>
                 La oferta debe ser <strong>mayor</strong> al precio mínimo. <br><br>Ten en cuenta que para tener más posibilidades de obtener el artículo debes ofertar más de <strong>
-                  <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span></strong>
+                <% if @product.auctions.present? %>
+                  <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                  <% else %>
+                  <span class="max-offer"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
+                  <% end %></strong>
               <div class="alert alerta-roja-price" style="display: none;"></div>
               </p>
+                <b>Cantidad a ofertar</b><br>
               <input type="number" class="oferta campo-login" step="10" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
               <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
             </div>
