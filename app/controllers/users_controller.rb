@@ -21,13 +21,19 @@ class UsersController < ApplicationController
   def edit
   end
 
-    def login
-       @user = User.find_by(email: params[:param1])
-       cookies[:user] = params[:param1]
-       respond_to do |format|
-          format.html
-          format.json { render json: @user }
-        end
+  def login
+    @user = User.find_by(email: params[:param1])
+    if @user.nil?
+        
+    else
+      @user.useraa = params[:param2]
+      @user.save
+      cookies[:user] = params[:param1]
+    end
+      respond_to do |format|
+        format.html
+        format.json { render json: @user }
+  end
 =begin
       if @user.present?
         format.json{render status:'ok'}
@@ -85,6 +91,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :name, :middle)
+      params.require(:user).permit(:email, :name, :middle, :useraa)
     end
 end

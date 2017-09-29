@@ -2,10 +2,12 @@
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-3 login">
-		<p>Ingresa con tu número de empleado:</p>
 				<form class="loginForm">
 					<div class="input-group">
-						<input type="text" id="name" class="form-control campo-login" placeholder="">
+						<p>Usuario:</p>
+						<input type="text" id="name" class="form-control campo-login" placeholder="AAXXXXXX">
+						<p>Email:</p>
+						<input type="text" id="email" class="form-control campo-login" placeholder="username@bestbuy.com">
 						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
 					</div>
 					&nbsp;
@@ -18,12 +20,13 @@
 	<div class="col-md-6 instrucciones-login">
 		<h1>INSTRUCCIONES</h1>
 		<p align="justify">
-			1.- Ingresa con tu número <strong>“Número de Empleado”</strong> a la <b>Subasta Best Buy</b>.<br>
+			1.- Ingresa con tu número <strong>“AA y correo electronico”</strong> a la <b>Subasta Best Buy</b>.<br>
 			2.- Revisa la lista de modelos y selecciona el que más te agrade.<br>
 			3.- A continuación estarás en el detalle del producto donde podrás ver las especificaciones y el precio incial del mismo.<br>
 			4.- En el detalle del producto podrás seleccionar si lo quieres <strong>“CON Correa”</strong> o <strong>“SIN Correa”</strong>, y ofertar por el que más te agrade. <br>
 			5.- Lo único que debes hacer es ingresar la cantidad que ofreces por el modelo que te gustó y dar click en el botón de <strong>“Ofertar”</strong>.<br>
-			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.
+			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.<br>
+	        7.- El <strong>pago</strong> se realizara a traves de <strong>descuento vía nomina</strong> y podra diferirse en <strong>1 o 2 o 3 catorcenas </strong> dependiendo del monto.
 		<p>
 	</div>
 </div>
@@ -40,11 +43,12 @@ jQuery(document).ready(function($) {
 
 
 function consulta(){
-	var username = $('#name').val();	
+	var username = $('#name').val();
+	var email = $('#email').val();	
 	$.ajax({
 		url: '/login',
 		dataType: 'json',
-		data: {param1: username},
+		data: {param1: email, param2: username},
 		success: function(data){
 			if(data!==null){
 				window.location.replace("/products");
