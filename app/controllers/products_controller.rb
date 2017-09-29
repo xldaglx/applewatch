@@ -17,6 +17,18 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def getmax
+    @product = Product.find(params[:id])
+    @max = @product.auctions.maximum(:amount)
+    respond_to do |format|
+       format.html
+       format.js {} 
+       format.json { 
+          render json: {:message => 'success', :price => @max}
+      } 
+    end
+  end
+
   # GET /products/1/edit
   def edit
   end

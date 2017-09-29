@@ -28,11 +28,19 @@ class AuctionsController < ApplicationController
     @auction = Auction.new(user_id: @user.id,product_id: @idproducto,amount: @oferta)
     respond_to do |format|
       if  @auction.save
-        format.html { redirect_to @product, notice: 'Auction was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        @product = Product.find(params[:param2])
+        @max = @product.auctions.maximum(:amount)
+         format.html
+         format.js {} 
+         format.json { 
+            render json: {:message => 'success', :price => @max}
+        } 
       else
-        format.html { render :new }
-        format.json { render json: @product, status: :unprocessable_entity }
+         format.html
+         format.js {} 
+         format.json { 
+            render json: {:message => 'error', :price => @max}
+        } 
       end
     end
   end

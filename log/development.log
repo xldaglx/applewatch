@@ -14267,3 +14267,2442 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:10:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  Rendered products/show.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 648ms (Views: 605.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:10:34 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+No template found for ProductsController#getmax, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:10:59 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:11:00 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+No template found for ProductsController#getmax, rendering head :no_content
+Completed 204 No Content in 126ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:11:09 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:11:09 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+No template found for ProductsController#getmax, rendering head :no_content
+Completed 204 No Content in 123ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:13:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/getMax/1506705194458" for 127.0.0.1 at 2017-09-29 12:13:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/products/getMax/1506705194458"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (18.6ms)
+Started GET "/products/getMax/1506705204466" for 127.0.0.1 at 2017-09-29 12:13:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/products/getMax/1506705204466"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (14.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:13:28 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/getMax" for 127.0.0.1 at 2017-09-29 12:13:28 -0500
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"getMax"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=getMax):
+  
+app/controllers/products_controller.rb:72:in `set_product'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (48.5ms)
+Started GET "/products/getMax" for 127.0.0.1 at 2017-09-29 12:13:38 -0500
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"getMax"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=getMax):
+  
+app/controllers/products_controller.rb:72:in `set_product'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.4ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (43.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:13:49 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax" for 127.0.0.1 at 2017-09-29 12:13:49 -0500
+Processing by ProductsController#getmax as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=):
+  
+app/controllers/products_controller.rb:21:in `getmax'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (51.6ms)
+Started GET "/getMax" for 127.0.0.1 at 2017-09-29 12:13:59 -0500
+Processing by ProductsController#getmax as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=):
+  
+app/controllers/products_controller.rb:21:in `getmax'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (50.9ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:14:10 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/getMax" for 127.0.0.1 at 2017-09-29 12:14:10 -0500
+Processing by ProductsController#getmax as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=):
+  
+app/controllers/products_controller.rb:21:in `getmax'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (51.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:14:43 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:14:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:14:59 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:15:37 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:15:53 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:16:22 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:16:36 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 53ms (Views: 49.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:16:50 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:17:46 -0500
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/controllers/products_controller.rb:25: syntax error, unexpected ':', expecting '}'
+      format.json { message: "success" }
+                            ^):
+  
+app/controllers/products_controller.rb:25: syntax error, unexpected ':', expecting '}'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.0ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:19:10 -0500
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/controllers/products_controller.rb:25: syntax error, unexpected ':', expecting '}'
+      format.json { message: "success" }
+                            ^):
+  
+app/controllers/products_controller.rb:25: syntax error, unexpected ':', expecting '}'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.9ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:19:15 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 82ms (Views: 64.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:20:30 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 56ms (Views: 52.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:20:31 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:21:18 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 78ms (Views: 62.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:21:19 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:21:27 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:21:27 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:22:24 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:22:24 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:22:25 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/saveAuction?param1=60000&param2=1" for 127.0.0.1 at 2017-09-29 12:22:31 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"60000", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 60000, '2017-09-29 17:22:31', '2017-09-29 17:22:31')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.7ms)
+  Rendered auctions/show.json.jbuilder (17.8ms)
+Completed 201 Created in 40ms (Views: 24.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:22:49 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:22:50 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/saveAuction?param1=700000&param2=1" for 127.0.0.1 at 2017-09-29 12:22:53 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"700000", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 700000, '2017-09-29 17:22:53', '2017-09-29 17:22:53')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.5ms)
+  Rendered auctions/show.json.jbuilder (1.4ms)
+Completed 201 Created in 16ms (Views: 7.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:23:15 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:23:15 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:23:40 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:23:40 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:26:46 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:26:46 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:28:16 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:28:17 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:28:22 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:28:22 -0500
+Started GET "/products/CheckIfDataExists/1506706102339" for 127.0.0.1 at 2017-09-29 12:28:22 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  
+ActionController::RoutingError (No route matches [GET] "/products/CheckIfDataExists/1506706102339"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mProduct Load (5.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (17.9ms)
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:28:32 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:29:00 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:29:00 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:29:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:29:14 -0500
+Started GET "/products/CheckIfDataExists/1506706154346" for 127.0.0.1 at 2017-09-29 12:29:14 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  
+ActionController::RoutingError (No route matches [GET] "/products/CheckIfDataExists/1506706154346"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (17.5ms)
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:29:24 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:29:27 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:29:28 -0500
+Started GET "/products/CheckIfDataExists/1506706168008" for 127.0.0.1 at 2017-09-29 12:29:28 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  
+ActionController::RoutingError (No route matches [GET] "/products/CheckIfDataExists/1506706168008"):
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 6.5ms)
+
+
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (20.4ms)
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:29:29 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:30:43 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 51ms (Views: 47.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:30:55 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:30:55', '2017-09-29 17:30:55')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.8ms)
+Completed 201 Created in 15ms (Views: 7.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/saveAuction?param1=19009&param2=1" for 127.0.0.1 at 2017-09-29 12:31:04 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"19009", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 19009, '2017-09-29 17:31:04', '2017-09-29 17:31:04')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.5ms)
+  Rendered auctions/show.json.jbuilder (1.5ms)
+Completed 201 Created in 14ms (Views: 7.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:32:19 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 74ms (Views: 56.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:32:20 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:32:20', '2017-09-29 17:32:20')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.8ms)
+Completed 201 Created in 20ms (Views: 8.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:32:36 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 70ms (Views: 53.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/saveAuction?param1=19009&param2=1" for 127.0.0.1 at 2017-09-29 12:32:39 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"19009", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 19009, '2017-09-29 17:32:39', '2017-09-29 17:32:39')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.6ms)
+Completed 201 Created in 21ms (Views: 8.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:32:53 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 87ms (Views: 66.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:32:55 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:32:55', '2017-09-29 17:32:55')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.7ms)
+Completed 201 Created in 21ms (Views: 8.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:33:10 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:33:10 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:33:10', '2017-09-29 17:33:10')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.5ms)
+  Rendered auctions/show.json.jbuilder (1.5ms)
+Completed 201 Created in 18ms (Views: 7.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:33:41 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 79ms (Views: 61.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:33:42 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:33:42', '2017-09-29 17:33:42')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (1.0ms)
+  Rendered auctions/show.json.jbuilder (2.5ms)
+Completed 201 Created in 22ms (Views: 9.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:33:58 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 80ms (Views: 61.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:33:59 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:33:59', '2017-09-29 17:33:59')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.9ms)
+  Rendered auctions/show.json.jbuilder (2.4ms)
+Completed 201 Created in 20ms (Views: 8.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:34:54 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 79ms (Views: 61.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:34:55 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:34:55', '2017-09-29 17:34:55')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.7ms)
+Completed 201 Created in 19ms (Views: 8.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:35:05 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 92ms (Views: 74.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:35:06 -0500
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/controllers/auctions_controller.rb:34: syntax error, unexpected ':', expecting '}'
+        format.html { notice: 'Auction was successfully cr...
+                             ^
+/Users/aa321936/Sites/applewatchgit/app/controllers/auctions_controller.rb:34: syntax error, unexpected ',', expecting '}'
+...ion was successfully created.', :max => @max }
+...                               ^):
+  
+app/controllers/auctions_controller.rb:34: syntax error, unexpected ':', expecting '}'
+app/controllers/auctions_controller.rb:34: syntax error, unexpected ',', expecting '}'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (46.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:35:15 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 82ms (Views: 63.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:35:16 -0500
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/controllers/auctions_controller.rb:34: syntax error, unexpected ':', expecting '}'
+        format.html {  notice: 'Auction was successfully cr...
+                              ^
+/Users/aa321936/Sites/applewatchgit/app/controllers/auctions_controller.rb:34: syntax error, unexpected ',', expecting '}'
+...ion was successfully created.', :max => @max }
+...                               ^):
+  
+app/controllers/auctions_controller.rb:34: syntax error, unexpected ':', expecting '}'
+app/controllers/auctions_controller.rb:34: syntax error, unexpected ',', expecting '}'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (47.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:35:20 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 82ms (Views: 63.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:35:21 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:35:21', '2017-09-29 17:35:21')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.9ms)
+  Rendered auctions/show.json.jbuilder (2.2ms)
+Completed 201 Created in 20ms (Views: 8.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:36:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 87ms (Views: 65.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:36:15 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:36:15', '2017-09-29 17:36:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.5ms)
+  Rendered auctions/show.json.jbuilder (1.7ms)
+Completed 200 OK in 22ms (Views: 8.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:36:29 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 90ms (Views: 58.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:36:30 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:36:30', '2017-09-29 17:36:30')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.7ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:36:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 84ms (Views: 66.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:36:49 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:36:49', '2017-09-29 17:36:49')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.8ms)
+  Rendered auctions/show.json.jbuilder (2.3ms)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:37:01 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 78ms (Views: 60.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:37:02 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:37:02', '2017-09-29 17:37:02')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.6ms)
+  Rendered auctions/show.json.jbuilder (1.8ms)
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:38:05 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 82ms (Views: 63.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:38:06 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+No template found for AuctionsController#saveAuction, rendering head :no_content
+Completed 204 No Content in 117ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:38:15 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 81ms (Views: 61.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:38:41 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:38:41', '2017-09-29 17:38:41')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.8ms)
+  Rendered auctions/show.json.jbuilder (2.2ms)
+Completed 201 Created in 21ms (Views: 9.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:39:45 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 87ms (Views: 68.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:39:46 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:39:46', '2017-09-29 17:39:46')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering auctions/show.json.jbuilder
+  Rendered auctions/_auction.json.jbuilder (0.8ms)
+  Rendered auctions/show.json.jbuilder (1.9ms)
+Completed 201 Created in 21ms (Views: 9.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:39:47 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:40:25 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 72ms (Views: 57.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:40:26 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:40:26', '2017-09-29 17:40:26')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/getMax?id=1" for 127.0.0.1 at 2017-09-29 12:40:26 -0500
+Processing by ProductsController#getmax as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:40:38 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:40:39 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:40:39', '2017-09-29 17:40:39')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:40:57 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:40:58', '2017-09-29 17:40:58')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:41:34 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 76ms (Views: 60.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/saveAuction?param1=100000&param2=1" for 127.0.0.1 at 2017-09-29 12:41:38 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"100000", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 100000, '2017-09-29 17:41:38', '2017-09-29 17:41:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:42:02 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:42:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:42:15 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:42:15', '2017-09-29 17:42:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/saveAuction?param1=182999&param2=1" for 127.0.0.1 at 2017-09-29 12:42:21 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"182999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 182999, '2017-09-29 17:42:21', '2017-09-29 17:42:21')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/saveAuction?param1=182999&param2=1" for 127.0.0.1 at 2017-09-29 12:42:23 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"182999", "param2"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 182999, '2017-09-29 17:42:23', '2017-09-29 17:42:23')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:42:32 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:42:56 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:43:11 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/saveAuction?param1=20000&param2=1" for 127.0.0.1 at 2017-09-29 12:43:15 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"20000", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 20000, '2017-09-29 17:43:15', '2017-09-29 17:43:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:43:45 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 77ms (Views: 61.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:43:47 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:43:47', '2017-09-29 17:43:47')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/saveAuction?param1=12312312&param2=1" for 127.0.0.1 at 2017-09-29 12:43:50 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"12312312", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 12312312, '2017-09-29 17:43:50', '2017-09-29 17:43:50')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:44:04 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/saveAuction?param1=21039&param2=1" for 127.0.0.1 at 2017-09-29 12:44:14 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"21039", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 21039, '2017-09-29 17:44:14', '2017-09-29 17:44:14')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:44:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/saveAuction?param1=23999&param2=1" for 127.0.0.1 at 2017-09-29 12:45:02 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"23999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 23999, '2017-09-29 17:45:02', '2017-09-29 17:45:02')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:45:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/aa321936/Sites/applewatchgit/app/views/products/show.html.erb:78: syntax error, unexpected ';', expecting ')'
+...('.freeze; number_to_currency(;@output_buffer.safe_append='d...
+...                               ^
+/Users/aa321936/Sites/applewatchgit/app/views/products/show.html.erb:78: syntax error, unexpected ')', expecting keyword_end
+...fe_append='data.price'.freeze;);@output_buffer.safe_append=';
+...                               ^):
+  
+app/views/products/show.html.erb:78: syntax error, unexpected ';', expecting ')'
+app/views/products/show.html.erb:78: syntax error, unexpected ')', expecting keyword_end
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.0ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:45:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 57ms (Views: 52.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/saveAuction?param1=28999&param2=1" for 127.0.0.1 at 2017-09-29 12:46:02 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"28999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 28999, '2017-09-29 17:46:02', '2017-09-29 17:46:02')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/saveAuction?param1=&param2=1" for 127.0.0.1 at 2017-09-29 12:46:17 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `created_at`, `updated_at`) VALUES (1, 1, '2017-09-29 17:46:17', '2017-09-29 17:46:17')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:46:39 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/saveAuction?param1=19019&param2=1" for 127.0.0.1 at 2017-09-29 12:46:52 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"19019", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 19019, '2017-09-29 17:46:52', '2017-09-29 17:46:52')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:47:30 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:48:09 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 81ms (Views: 63.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:48:10 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:48:10', '2017-09-29 17:48:10')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:48:31 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 81ms (Views: 63.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:48:32 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:48:32', '2017-09-29 17:48:32')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 3.5ms)
+
+
+  
+NoMethodError (undefined method `number_to_currency' for #<AuctionsController:0x007f946b91fc38>):
+  
+app/controllers/auctions_controller.rb:33:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (119.0ms)
+Started GET "/saveAuction?param1=40000&param2=1" for 127.0.0.1 at 2017-09-29 12:48:39 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"40000", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 40000, '2017-09-29 17:48:39', '2017-09-29 17:48:39')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `number_to_currency' for #<AuctionsController:0x007f9471bc3380>):
+  
+app/controllers/auctions_controller.rb:33:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.9ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (110.7ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:49:07 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 99ms (Views: 77.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:49:08 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:49:08', '2017-09-29 17:49:08')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `number_to_currency' for #<AuctionsController:0x007f9473584170>):
+  
+app/controllers/auctions_controller.rb:33:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (112.4ms)
+Started GET "/saveAuction?param1=23423423423&param2=1" for 127.0.0.1 at 2017-09-29 12:49:10 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"23423423423", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveModel::RangeError (23423423423 is out of range for ActiveModel::Type::Integer with limit 4):
+  
+app/controllers/auctions_controller.rb:30:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (12.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (56.5ms)
+Started GET "/saveAuction?param1=23423423423&param2=1" for 127.0.0.1 at 2017-09-29 12:49:27 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"23423423423", "param2"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveModel::RangeError (23423423423 is out of range for ActiveModel::Type::Integer with limit 4):
+  
+app/controllers/auctions_controller.rb:30:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (46.7ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:49:44 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:49:49 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:49:49', '2017-09-29 17:49:49')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `number_to_currency' for #<AuctionsController:0x007f9473959b60>):
+  
+app/controllers/auctions_controller.rb:33:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.7ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (110.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:50:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 72ms (Views: 56.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:50:15 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:50:15', '2017-09-29 17:50:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `number_to_currency' for #<AuctionsController:0x007f946d023678>):
+  
+app/controllers/auctions_controller.rb:32:in `block in saveAuction'
+app/controllers/auctions_controller.rb:29:in `saveAuction'
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.5ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/aa321936/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (101.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 12:51:07 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 75ms (Views: 56.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 12:51:08 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 17:51:08', '2017-09-29 17:51:08')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:08:13 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 73ms (Views: 55.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:08:14 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:08:14', '2017-09-29 18:08:14')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:08:25 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:08:26 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:08:26', '2017-09-29 18:08:26')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:08:30 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 78ms (Views: 61.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:08:31 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:08:31', '2017-09-29 18:08:31')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:08:46 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 66ms (Views: 50.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:08:47 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:08:47', '2017-09-29 18:08:47')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:08:52 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 83ms (Views: 66.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:08:53 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:08:53', '2017-09-29 18:08:53')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:09:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 86ms (Views: 66.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:09:03 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:09:04', '2017-09-29 18:09:04')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:09:31 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 81ms (Views: 63.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/saveAuction?param1=18999&param2=1" for 127.0.0.1 at 2017-09-29 13:09:32 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"18999", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 18999, '2017-09-29 18:09:32', '2017-09-29 18:09:32')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/saveAuction?param1=29059&param2=1" for 127.0.0.1 at 2017-09-29 13:09:39 -0500
+Processing by AuctionsController#saveAuction as JSON
+  Parameters: {"param1"=>"29059", "param2"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `auctions` (`user_id`, `product_id`, `amount`, `created_at`, `updated_at`) VALUES (1, 1, 29059, '2017-09-29 18:09:39', '2017-09-29 18:09:39')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-29 13:09:44 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  Rendered products/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-29 13:09:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '10012768' LIMIT 1[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT `auctions`.* FROM `auctions` WHERE `auctions`.`user_id` = 1 AND `auctions`.`product_id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT MAX(`auctions`.`amount`) FROM `auctions` WHERE `auctions`.`product_id` = 1[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 1.6ms)
+
+

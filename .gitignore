@@ -26,3 +26,11 @@
 config/database.yml
 
 config/database.yml
+
+*.log
+
+*.log
+
+*.cache
+
+*.pid
