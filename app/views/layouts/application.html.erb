@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Applewatch</title>
     <%= csrf_meta_tags %>
 
@@ -161,7 +162,13 @@
           <span class="icon-bar"></span>
         </button-->
         <a class="navbar-brand" href="/"><img src="/images/subasta-logo.png" alt="Subasta Best Buy" title="Subasta Best Buy" width="250" /></a>
+        <% if cookies[:user].present? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/closeSession">Cerrar Sesión</a></li>
+        </ul>
+        <% end %>
       </div>
+
     </div><!-- /.container-fluid -->
     </nav>
     <div class="container">

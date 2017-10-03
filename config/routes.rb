@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'login', to: 'users#login'
   get 'saveAuction', to: 'auctions#saveAuction'
   get 'getMax', to: 'products#getmax'
+  get 'closeSession', to: 'users#logout'
 end

@@ -31,8 +31,8 @@
                 </div>
                </div>
             </div>
-
-            <div class="bloques">
+            <% if @offerended == 0 %>
+            <div class="bloques offer">
               <p>
                 <br>
                 La oferta debe ser <strong>mayor</strong> al precio mínimo. <br><br>Ten en cuenta que para tener más posibilidades de obtener el artículo debes ofertar más de <strong>
@@ -43,12 +43,15 @@
                   <% end %></strong>
               <div class="alert alerta-roja-price" style="display: none;"></div>
               </p>
-              <div class="form-off">
-                <b>Cantidad a ofertar</b><br>
-              <input type="number" class="oferta campo-login" step="10" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
-              <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
-              </div>
+                <div class="form-off">
+                  <b>Cantidad a ofertar</b><br>
+                <input type="number" class="oferta campo-login" step="10" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
+                <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
+                </div>
             </div>
+              <% else %>
+                <div class="alert alert-warning">La subasta ha finalizado </div>
+              <% end %>
 
             <input type="hidden" id="idProducto" value="<%= @product.id %>">
             <input type="hidden" id="val1" value="<%= @product.price.to_i %>">
@@ -84,22 +87,26 @@
           dataType: 'json',
           data: {param1: oferta, param2: <%= @product.id %>},
           success: function(data){
-            $('.max-offer').text("$"+data.price);
-            if(data.message == "success"){
-              $('.form-off').hide();
-              $('.alerta-roja-price').show();
-              $('.alerta-roja-price').removeClass('alert-danger');
-              $('.alerta-roja-price').addClass('alert-success');
-              $('.alerta-roja-price').text('Felicidades, Tu oferta ha sido guardada exitosamente.');
-              $('.alerta-roja-price').append('<ul><li><a href="/products">Ver listado de productos </a></li><li><a href="#" class="offer-nueva">Ofertar nuevamente por este producto </a></li>');
-              //window.location.replace("/products");
-              $('.offer-nueva').click(function(event) {
-                $('form-off').show();
-              });
+            if(data.message == "fin"){
+              $('.bloques.offer').replaceWith('<div class="alert alert-warning">La subasta ha finalizado </div>');          
             }else{
-              $('#alerta-roja').show();
-              $('#msj').text('Lo sentimos hubo un error, vuelve a intentarlo');
-            }   
+              $('.max-offer').text("$"+data.price);
+              if(data.message == "success"){
+                $('.form-off').hide();
+                $('.alerta-roja-price').show();
+                $('.alerta-roja-price').removeClass('alert-danger');
+                $('.alerta-roja-price').addClass('alert-success');
+                $('.alerta-roja-price').text('Felicidades, Tu oferta ha sido guardada exitosamente.');
+                $('.alerta-roja-price').append('<ul><li><a href="/products">Ver listado de productos </a></li><li><a href="#" class="offer-nueva">Ofertar nuevamente por este producto </a></li>');
+                //window.location.replace("/products");
+                $('.offer-nueva').click(function(event) {
+                  $('form-off').show();
+                });
+              }else{
+                $('#alerta-roja').show();
+                $('#msj').text('Lo sentimos hubo un error, vuelve a intentarlo');
+              }     
+            }
           }
         });
         

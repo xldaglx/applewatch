@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def logout
+    cookies.delete :user
+    cookies.delete :new_user
+    redirect_to "/"
+  end
+
   def login
     @user = User.find_by(email: params[:param1])
     if @user.nil?
