@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :require_login_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
