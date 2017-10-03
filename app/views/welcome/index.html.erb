@@ -4,9 +4,9 @@
 	<div class="col-md-3 login">
 				<form class="loginForm">
 					<div class="input-group">
-						<p>Usuario:</p>
+						<p>No. de Usuario <b>AA</b>:</p>
 						<input type="text" id="name" class="form-control campo-login" placeholder="AAXXXXXX">
-						<p>Email:</p>
+						<p>Correo elctrónico:</p>
 						<input type="text" id="email" class="form-control campo-login" placeholder="usuario@bestbuy.com">
 						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
 					</div>
@@ -18,20 +18,24 @@
 	<div class="col-md-1"></div>
 	<div class="col-md-6 instrucciones-login">
 		<h1>INSTRUCCIONES</h1>
-		<p align="justify">
-
+		<p>
 			1.- Ingresa con tu número <strong>“AA y correo electronico”</strong> a la <b>Subasta Best Buy</b>.<br>
 			2.- Revisa la lista de modelos y selecciona el que más te agrade.<br>
 			3.- A continuación estarás en el detalle del producto donde podrás ver las especificaciones y el precio incial del mismo.<br>
 			4.- En el detalle del producto podrás seleccionar si lo quieres <strong>“CON Correa”</strong> o <strong>“SIN Correa”</strong>, y ofertar por el que más te agrade. <br>
 			5.- Lo único que debes hacer es ingresar la cantidad que ofreces por el modelo que te gustó y dar click en el botón de <strong>“Ofertar”</strong>.<br>
 			6.- A continuación podrás ver de nuevo el listado de productos y ofertar por otro modelo de tu interés.
-
-			Puja descuento en nómina si es mayor a 3000 lo van a parcializar en 3 catorcenas...
-			De acuerdo a la qty de relojes las pujas más altas serán los ganadores. 
-
-			Recuerda que es para nuestra fiesta de fin de año así como donación a instituciones de beneficencia.  
 		<p>
+		<h1>MECÁNICA DE LA SUBASTA</h1>
+		<p><b>Por favor, leer con atención:</b></p>
+		<p>
+			• De acuerdo a la cantidad de relojes las pujas más altas serán las ganadores, es decir, si existen 5 relojes del mismo modelo, las 5 pujas mas altas serán las ganadoras de ese artículo.<br>
+			• En caso de que ofertes más de una vez por el mismo artículo, se tomará en cuenta tu oferta más alta.<br>
+			• Para tu comodidad, en caso de que hayas sido ganador y tu artículo tenga un monto igual o mayor a $3,000 pesos, esta cantidad será dividida y descontada durante 3 catorcenas, por lo que no tendrás que pagar todo en una sola vez.
+		</p>
+		<p>
+			• <b><i>Recuerda que es para nuestra fiesta de fin de año así como donación a instituciones de beneficencia.</i></b>
+		</p>
 	</div>
 </div>
 
@@ -59,7 +63,7 @@ function consulta(){
 			if(data!==null){
 				window.location.replace("/products");
 			}else{
-				$('#msg').html('Lo sentimos, el usuario no existe.').fadeIn('');
+				$('#msg').html('Lo sentimos, por favor verifica tu usuario o correo electrónico.').fadeIn('');
 			}	
 		}
 	});
