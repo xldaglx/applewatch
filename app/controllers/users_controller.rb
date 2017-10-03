@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -98,5 +99,19 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :name, :middle, :useraa)
+    end
+
+    def require_admin_login
+      if cookies['user'].nil?
+        username = ""
+      else
+        username = cookies['user']
+      end
+      my_string = username
+      if my_string.include? "gerardo.ayala"
+        p "Admin Login"
+      else
+        redirect_to "/"         
+      end
     end
 end
