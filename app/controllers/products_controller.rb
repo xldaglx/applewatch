@@ -1,6 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :require_login, only: [:index]
-  before_action :require_admin_login, only: [:edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -90,25 +88,5 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :price, :price_correa, :qty, :image, :qtycorrea, :finish_at)
-    end
- 
-    def require_login
-      if cookies['user'].blank?
-        redirect_to "/"
-      end
-    end
-
-    def require_admin_login
-      if cookies['user'].nil?
-        username = ""
-      else
-        username = cookies['user']
-      end
-      my_string = username
-      if my_string.include? "gerardo.ayala"
-        p "Admin Login"
-      else
-        redirect_to "/"         
-      end
     end
 end

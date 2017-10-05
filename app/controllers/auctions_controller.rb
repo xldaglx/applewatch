@@ -1,5 +1,4 @@
 class AuctionsController < ApplicationController
-  before_action :require_admin_login, only: [:index, :edit, :update, :destroy]
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
 
   # GET /auctions
@@ -108,15 +107,4 @@ class AuctionsController < ApplicationController
       params.require(:auction).permit(:user_id, :product_id, :amount)
     end
 
-    def require_admin_login
-      if cookies['user'].blank?
-        redirect_to "/"
-      end
-        my_string = cookies['user']
-        if my_string.include? "gerardo.ayala"
-          p "Admin Login"
-        else
-          redirect_to "/"         
-        end
-    end
 end
