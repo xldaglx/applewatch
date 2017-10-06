@@ -35,7 +35,7 @@
             <!-- No empiezan -->
             <% if @offerended == 1 %>
                 <div class="alert alert-warning">La subasta no ha comenzado </div>
-                <span class="timestart">Empieza en <%= distance_of_time_in_words(Time.now, @product.start_at) %></span>
+                <span class="timestart">Comienza en <%= distance_of_time_in_words(Time.now, @product.start_at) %></span>
             <% end %>
             <!-- Activas -->
             <% if @offerended == 2 %>
@@ -55,12 +55,12 @@
                 <input type="number" class="oferta campo-login" step="50" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
                 <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
                 </div>
-                <span class="timeend">Termina en <%= distance_of_time_in_words(Time.now, @product.finish_at) %></span>
+                <span class="timeend">Finaliza en <%= distance_of_time_in_words(Time.now, @product.finish_at) %></span>
             </div>
             <% end %>
             <% if @offerended == 3 %>
                 <div class="alert alert-warning">La subasta ha finalizado </div>
-                <span class="timeend">Terminó hace <%= distance_of_time_in_words(@product.finish_at,Time.now) %></span>
+                <span class="timeend">Finalizó hace <%= distance_of_time_in_words(@product.finish_at,Time.now) %></span>
               <% end %>
 
             <input type="hidden" id="idProducto" value="<%= @product.id %>">
