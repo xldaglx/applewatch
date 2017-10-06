@@ -13,42 +13,50 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: 'form-control' %>
   </div>
 
 
-  <%= f.file_field :image, label: "Sube tu imagen (opcional)" %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, label: "Sube tu imagen (opcional)" %>
+  </div>
 
 
   <div class="field">
     <%= f.label :price_correa %>
-    <%= f.text_field :price_correa %>
+    <%= f.text_field :price_correa, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :qty %>
-    <%= f.number_field :qty %>
+    <%= f.number_field :qty, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :finish_at %>
-    <%= f.datetime_field :finish_at %>
+    <%= f.datetime_field :finish_at, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_at %>
+    <%= f.datetime_field :start_at, class: 'form-control' %>
   </div>
 
     <%= f.label :qtycorrea %>
-    <%= f.number_field :qtycorrea %>
+    <%= f.number_field :qtycorrea, class: 'form-control' %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default'%>
   </div>
 <% end %>

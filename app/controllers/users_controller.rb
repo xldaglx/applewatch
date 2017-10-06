@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:index, :show, :edit, :update, :destroy]
+  before_action :require_admin_login, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -23,6 +25,7 @@ class UsersController < ApplicationController
 
   def logout
     cookies.delete :user
+    cookies.delete :validateuser
     cookies.delete :new_user
     redirect_to "/"
   end
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
       @user.useraa = params[:param2]
       @user.save
       cookies[:user] = params[:param1]
+      cookies[:validateuser] = @user.admin
     end
       respond_to do |format|
         format.html
@@ -98,6 +102,26 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :name, :middle, :useraa)
+    end
+    def require_login
+      if cookies['user'].blank?
+        redirect_to "/"
+      end
+    end
+
+    def require_admin_login
+      if cookies['validateuser'].nil?
+        username = 0
+      end
+      if cookies['validateuser'] == 1
+        username = 1
+      end
+      
+      if username = 1
+        p "Admin Login"
+      else
+        redirect_to "/"         
+      end
     end
 
 end

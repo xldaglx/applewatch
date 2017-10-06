@@ -1,21 +1,30 @@
 class ProductsController < ApplicationController
+  before_action :require_login
+  before_action :require_admin_login, only: [:edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @activeproducts = Product.where(['start_at <= ? AND finish_at >= ?', Time.now, Time.now]).order('start_at ASC')
+    @notavailableproducts = Product.where(['start_at >= ?', Time.now]).order('start_at ASC')
+    @endedproducts = Product.where(['finish_at <= ?', Time.now]).order('finish_at DESC')
+    @user = User.find_by(email: cookies[:user])
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    if @product.finish_at < Time.now
-      @offerended = 1
-    else
-      @offerended = 0
+    @offerended = 0
+    if @product.start_at >= Time.now
+      @offerended = 1 #Aun no inicia
     end
-
+    if @product.start_at <= Time.now && @product.finish_at >= Time.now
+      @offerended = 2 #Activa
+    end
+    if @product.finish_at < Time.now
+      @offerended = 3 #Finalizo
+    end
   end
 
   # GET /products/new
@@ -87,6 +96,27 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :price_correa, :qty, :image, :qtycorrea, :finish_at)
+      params.require(:product).permit(:name, :description, :price, :price_correa, :qty, :image, :qtycorrea, :finish_at, :start_at)
+    end
+ 
+    def require_login
+      if cookies['user'].blank?
+        redirect_to "/"
+      end
+    end
+
+    def require_admin_login
+      if cookies['validateuser'].nil?
+        username = 0
+      end
+      if cookies['validateuser'] == 1
+        username = 1
+      end
+      
+      if username = 1
+        p "Admin Login"
+      else
+        redirect_to "/"         
+      end
     end
 end

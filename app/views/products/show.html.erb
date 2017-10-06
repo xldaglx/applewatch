@@ -31,7 +31,14 @@
                 </div>
                </div>
             </div>
-            <% if @offerended == 0 %>
+
+            <!-- No empiezan -->
+            <% if @offerended == 1 %>
+                <div class="alert alert-warning">La subasta no ha comenzado </div>
+                <span class="timestart">Empieza en <%= distance_of_time_in_words(Time.now, @product.start_at) %></span>
+            <% end %>
+            <!-- Activas -->
+            <% if @offerended == 2 %>
             <div class="bloques offer">
               <p>
                 <br>
@@ -45,12 +52,15 @@
               </p>
                 <div class="form-off">
                   <b>Cantidad a ofertar</b><br>
-                <input type="number" class="oferta campo-login" step="10" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
+                <input type="number" class="oferta campo-login" step="50" id="pricea" placeholder="Monto a ofertar" value="<%= @product.price.to_i %>">
                 <input style="vertical-align:baseline;min-width:120px;" type="button" class="btn btn-primary btn-login" id="ofertar" value="Ofertar"> 
                 </div>
+                <span class="timeend">Termina en <%= distance_of_time_in_words(Time.now, @product.finish_at) %></span>
             </div>
-              <% else %>
+            <% end %>
+            <% if @offerended == 3 %>
                 <div class="alert alert-warning">La subasta ha finalizado </div>
+                <span class="timeend">Terminó hace <%= distance_of_time_in_words(@product.finish_at,Time.now) %></span>
               <% end %>
 
             <input type="hidden" id="idProducto" value="<%= @product.id %>">
@@ -74,12 +84,19 @@
     
   $('#alerta-roja').hide();
     $('#ofertar').click(function(event) {
+      moduloe = parseInt($(this).val()) % 50
       oferta = $('.oferta').val();
       preciomin = $('#val1').val();
+      moduloe = parseInt(oferta) % 50
+      if(moduloe != 0){
+        $('.alerta-roja-price').show();
+        $('.alerta-roja-price').addClass('alert-danger');
+        $('.alerta-roja-price').text('La oferta debe ser en múltiplos de 50 pesos');
+      }else{
       if(parseInt(oferta) < parseInt(preciomin)){
         $('.alerta-roja-price').show();
         $('.alerta-roja-price').addClass('alert-danger');
-        $('.alerta-roja-price').text('La ofeta debe ser mayor al precio mínimo');
+        $('.alerta-roja-price').text('La oferta debe ser mayor al precio mínimo');
       }else{
         
         $.ajax({
@@ -110,6 +127,7 @@
           }
         });
         
+      }
       }
     });
    

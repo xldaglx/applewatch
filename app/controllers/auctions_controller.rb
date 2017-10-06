@@ -1,4 +1,6 @@
 class AuctionsController < ApplicationController
+  before_action :require_login, only: [:index, :show, :edit, :update, :destroy]
+  before_action :require_admin_login, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
 
   # GET /auctions
@@ -105,6 +107,26 @@ class AuctionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def auction_params
       params.require(:auction).permit(:user_id, :product_id, :amount)
+    end
+    def require_login
+      if cookies['user'].blank?
+        redirect_to "/"
+      end
+    end
+
+    def require_admin_login
+      if cookies['validateuser'].nil?
+        username = 0
+      end
+      if cookies['validateuser'] == 1
+        username = 1
+      end
+      
+      if username = 1
+        p "Admin Login"
+      else
+        redirect_to "/"         
+      end
     end
 
 end

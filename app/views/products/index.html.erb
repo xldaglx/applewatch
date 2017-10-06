@@ -1,21 +1,68 @@
 <div class="row">
   <div class="container">
     <h1>MODELOS</h1>
-    <p>Selecciona el modelo de <strong>Apple Watch</strong> que mas te agrade:</p>
-    <% @products.each do |product| %>
+    <p>Hola <%= @user.name %>, selecciona el artículo que mas te agrade:</p>
+    <h2>Subastas actuales</h2>
+    <% @activeproducts.each do |product| %>
       <div class="col-md-3 producto-ind">
         <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
+        <span class="timeend">Termina en <%= distance_of_time_in_words(Time.now, product.finish_at) %></span>
           <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
           
           <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %></strong> Ofertas hasta ahora</span>
           <br>
           <span class="tus-ofertas"><%= auctionExists(cookies[:user], product.id) %></span>
-          <br>
-
-          
+           <% if product.auctions.present? %><br>
+            Oferta más alta: <span class="max-offer"><%= number_to_currency(product.auctions.maximum(:amount), precision: 0)%></span>
+          <% else %>
+              <span class="max-offer"> 
+                Aún no existen ofertas
+              </span>
+          <% end %>
+          <br>     
           <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ofertar</a>
       </div>
-  </div>
     <% end %>
+  </div></div>
+<div class="row">
+  <div class="container">
+    <h2>Próximas subastas</h2>
+    <% @notavailableproducts.each do |product| %>
+      <div class="col-md-3 producto-ind" style="opacity: 0.7">
+        <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
+        <span class="timestart" style="opacity: 1; color:green">
+          Empieza en <%= distance_of_time_in_words(Time.now, product.start_at) %>
+        </span>
+
+          <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+          <br>     
+          Oferta inicia en:  <%= number_to_currency(product.price) %><br>
+          <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver producto</a>
+      </div>
+    <% end %>
+  </div></div>
+    <div class="row">
+  <div class="container">
+    <h2>Subastas terminadas</h2>
+    <% @endedproducts.each do |product| %>
+      <div class="col-md-3 producto-ind" style="opacity: 0.7">
+       <h6><%= product.name %></h6>
+      <span class="timeend">Terminó hace <%= distance_of_time_in_words(product.finish_at,Time.now) %></span>
+        <%= image_tag product.image, class:'img-responsive'%>
+          
+          <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %></strong> Ofertas</span>
+          <br>
+          <span class="tus-ofertas"><%= auctionExists(cookies[:user], product.id) %></span>
+           <% if product.auctions.present? %><br>
+            Oferta más alta: <span class="max-offer"><%= number_to_currency(product.auctions.maximum(:amount), precision: 0)%></span>
+          <% else %>
+          <br>
+            Sin ofertas
+          <% end %>
+          <br>    
+          <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver ganadores</a> 
+      </div>
+    <% end %>
+  </div>
 </div>
 
