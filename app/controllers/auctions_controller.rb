@@ -24,12 +24,11 @@ class AuctionsController < ApplicationController
   end
 
   def saveAuction
-    @user =  User.find_by(email: cookies[:user])
     @oferta = params[:param1]
     @idproducto = params[:param2]
     @product = Product.find(@idproducto)
     if @product.finish_at > Time.now
-      @auction = Auction.new(user_id: @user.id,product_id: @idproducto,amount: @oferta)
+      @auction = Auction.new(user_id: cookies[:iduser],product_id: @idproducto,amount: @oferta)
       respond_to do |format|
         if  @auction.save
           @product = Product.find(params[:param2])

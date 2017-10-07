@@ -33,3 +33,9 @@ config/database.yml
 *.cache
 
 *.pid
+
+*.log
+
+*.log
+
+*.cache

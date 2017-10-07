@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     cookies.delete :user
     cookies.delete :validateuser
     cookies.delete :new_user
+    cookies.delete :iduser
     redirect_to "/"
   end
 
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
       @user.save
       cookies[:user] = params[:param1]
       cookies[:validateuser] = @user.admin
+      cookies[:iduser] = @user.id
     end
       respond_to do |format|
         format.html

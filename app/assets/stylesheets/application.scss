@@ -159,8 +159,12 @@ body{
     font-size: 13px;
 }
 .max-offer {
-	color:red;
-    font-size: 13px;
+	color:red !important;
+  font-size: 14px !important;
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 .timestart{
     color: green;

@@ -9,7 +9,12 @@ class ProductsController < ApplicationController
     @activeproducts = Product.where(['start_at <= ? AND finish_at >= ?', Time.now, Time.now]).order('start_at ASC')
     @notavailableproducts = Product.where(['start_at >= ?', Time.now]).order('start_at ASC')
     @endedproducts = Product.where(['finish_at <= ?', Time.now]).order('finish_at DESC')
-    @user = User.find_by(email: cookies[:user])
+    @myproducts = Product
+                      .joins("LEFT JOIN `auctions` ON auctions.product_id = products.id")
+                      .joins("LEFT JOIN `users` ON auctions.user_id = users.id")
+                      .where("users.id = " + cookies[:iduser])
+                      .group("auctions.product_id")
+    @user = User.find(cookies[:iduser])
   end
 
   # GET /products/1
