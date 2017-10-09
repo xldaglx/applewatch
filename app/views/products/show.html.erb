@@ -27,8 +27,8 @@
                       <span id="priceCC"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
                     </div>
                     <div class="price-auction">
-                      <div class="glyphicon glyphicon-refresh" style="cursor:pointer;" id="update-offer"></div>
                     <% if @product.auctions.present? %>
+                      <div class="glyphicon glyphicon-refresh" style="cursor:pointer;" id="update-offer"></div>
                       Oferta más alta al momento: <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
                     <% else %>
                       Oferta más alta al momento: <span class="max-offer"> Aún no existen ofertas</span>
