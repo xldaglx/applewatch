@@ -16,26 +16,28 @@
             <div class="row border-inf">
         
               <div class="col-md-12">
-                <div class="bloques precio-inicial">
-                   <span class="no-ofertas"><span class="glyphicon glyphicon-eye-open"></span><strong>&nbsp;<%= @current_viewers %></strong>  <%= @current_viewers == 1 ? "Persona esta" : "Personas estan" %> viendo este producto</span><br>
-                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span><strong>&nbsp;<%= @product.auctions.count %> </strong> <%= @product.auctions.count == 1 ? "Oferta" : "Ofertas" %></span>
-                   <br>
-                   <span class="tus-ofertas"><%= auctionExists(cookies[:iduser], @product.id) %></span>
-                   <div class="precios-iniciales">
-                    <div class="precio" id="precioCC">
-                      <b>Precio Inicial</b><br>
-                      <span id="priceCC"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
-                    </div>
-                    <div class="price-auction">
-                    <% if @product.auctions.present? %>
-                      <div class="glyphicon glyphicon-refresh" style="cursor:pointer;" id="update-offer"></div>
-                      Oferta más alta al momento: <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
-                    <% else %>
-                      Oferta más alta al momento: <span class="max-offer"> Aún no existen ofertas</span>
-                    <% end %>
-                    </div>
-                   </div>
-                </div>
+                <% if @offerended != 3 %>
+                  <div class="bloques precio-inicial">
+                     <span class="no-ofertas"><span class="glyphicon glyphicon-eye-open"></span><strong>&nbsp;<%= @current_viewers %></strong>  <%= @current_viewers == 1 ? "Persona esta" : "Personas estan" %> viendo este producto</span><br>
+                     <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span><strong>&nbsp;<%= @product.auctions.count %> </strong> <%= @product.auctions.count == 1 ? "Oferta" : "Ofertas" %></span>
+                     <br>
+                     <span class="tus-ofertas"><%= auctionExists(cookies[:iduser], @product.id) %></span>
+                     <div class="precios-iniciales">
+                      <div class="precio" id="precioCC">
+                        <b>Precio Inicial</b><br>
+                        <span id="priceCC"><%= number_to_currency(@product.price.to_i, precision: 0) %></span>
+                      </div>
+                      <div class="price-auction">
+                      <% if @product.auctions.present? %>
+                        <div class="glyphicon glyphicon-refresh" style="cursor:pointer;" id="update-offer"></div>
+                        Oferta más alta al momento: <span class="max-offer"><%= number_to_currency(@product.auctions.maximum(:amount), precision: 0)%></span>
+                      <% else %>
+                        Oferta más alta al momento: <span class="max-offer"> Aún no existen ofertas</span>
+                      <% end %>
+                      </div>
+                     </div>
+                  </div>
+                <% end %>
               </div>   
               <!--           
               <div class="col-md-6">
@@ -72,6 +74,18 @@
             </div>
             <% end %>
             <% if @offerended == 3 %>
+              <div class="list-group">
+                <a href="#" class="list-group-item active">
+                  Lista de ganadores
+                </a>
+                <% @winners.each do |auctions| %>
+                 <div class="list-group-item">
+                  <%= User.find(auctions.user_id).useraa %> - 
+                  <%= User.find(auctions.user_id).name %>
+                  <%= User.find(auctions.user_id).middle %>
+                  </div>
+                <% end %>
+              </div>
                 <div class="alert alert-warning">La subasta ha finalizado </div>
                 <span class="timeend">Finalizó hace <%= distance_of_time_in_words(@product.finish_at,Time.now) %></span>
               <% end %>

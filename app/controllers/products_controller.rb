@@ -24,16 +24,20 @@ class ProductsController < ApplicationController
     @offerended = 0
     if @product.start_at >= Time.now
       @offerended = 1 #Aun no inicia
+      @user.last_seen_at = Time.now
+      @user.save
+      @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
     end
     if @product.start_at <= Time.now && @product.finish_at >= Time.now
       @offerended = 2 #Activa
+      @user.last_seen_at = Time.now
+      @user.save
+      @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
     end
     if @product.finish_at < Time.now
       @offerended = 3 #Finalizo
+      @winners = @product.auctions.select('MAX(auctions.amount) as amount, user_id').group(:user_id).all.order('auctions.amount DESC').limit(@product.qty)
     end
-    @user.last_seen_at = Time.now
-    @user.save
-    @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
   end
 
   # GET /products/new
