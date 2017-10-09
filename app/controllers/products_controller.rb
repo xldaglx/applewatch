@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @user = User.find(cookies[:iduser])
     @offerended = 0
     if @product.start_at >= Time.now
       @offerended = 1 #Aun no inicia
@@ -30,6 +31,9 @@ class ProductsController < ApplicationController
     if @product.finish_at < Time.now
       @offerended = 3 #Finalizo
     end
+    @user.last_seen_at = Time.now
+    @user.save
+   p @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
   end
 
   # GET /products/new

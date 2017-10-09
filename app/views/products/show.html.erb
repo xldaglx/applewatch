@@ -17,7 +17,8 @@
         
               <div class="col-md-12">
                 <div class="bloques precio-inicial">
-                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span><strong><%= @product.auctions.count %></strong> Ofertas hasta ahora </span>
+                   <span class="no-ofertas"><span class="glyphicon glyphicon-eye-open"></span><strong>&nbsp;<%= @current_viewers %></strong>  <%= @current_viewers == 1 ? "Persona esta" : "Personas estan" %> viendo este producto</span><br>
+                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span><strong>&nbsp;<%= @product.auctions.count %> </strong> <%= @product.auctions.count == 1 ? "Oferta" : "Ofertas" %></span>
                    <br>
                    <span class="tus-ofertas"><%= auctionExists(cookies[:iduser], @product.id) %></span>
                    <div class="precios-iniciales">
