@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     end
     @user.last_seen_at = Time.now
     @user.save
-   p @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
+    @current_viewers = User.where("last_seen_at > ?", 5.minutes.ago).count
   end
 
   # GET /products/new
@@ -43,7 +43,11 @@ class ProductsController < ApplicationController
 
   def getmax
     @product = Product.find(params[:id])
-    @max = @product.auctions.maximum(:amount)
+    if @product.auctions.present?
+      @max = @product.auctions.maximum(:amount)
+    else
+      @max = 0
+    end
     respond_to do |format|
        format.html
        format.js {} 
