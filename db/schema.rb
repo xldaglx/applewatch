@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171009015559) do
 
-  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "amount"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171009015559) do
     t.index ["user_id"], name: "index_auctions_on_user_id", using: :btree
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
     t.string   "description"
     t.string   "price"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20171009015559) do
     t.datetime "start_at"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "email"
     t.string   "name"
     t.string   "middle"
