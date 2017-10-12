@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(email: params[:param1])
+    @user = User.find_by(email: params[:param1],useraa: params[:param2])
     if @user.nil?
         
     else

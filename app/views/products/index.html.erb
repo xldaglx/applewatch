@@ -6,17 +6,21 @@
       <div class="container">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#actuales" aria-controls="home" role="tab" data-toggle="tab">Actuales</a></li>
-          <li role="presentation"><a href="#proximas" aria-controls="profile" role="tab" data-toggle="tab">Próximas Subastas</a></li>
-          <li role="presentation"><a href="#finalizadas" aria-controls="messages" role="tab" data-toggle="tab">Finalizadas</a></li>
-          <li role="presentation"><a href="#ofertas" aria-controls="messages" role="tab" data-toggle="tab">Mis Ofertas</a></li>
+          <li role="presentation" class="active"><a href="#actuales" aria-controls="home" role="tab" data-toggle="tab"><span class="badge"> <%= @activeproducts.count %></span> Actuales</a></li>
+          <li role="presentation"><a href="#proximas" aria-controls="profile" role="tab" data-toggle="tab"><span class="badge"> <%= @notavailableproducts.count %></span> Próximas Subastas</a></li>
+          <li role="presentation"><a href="#finalizadas" aria-controls="messages" role="tab" data-toggle="tab"><span class="badge"> <%= @endedproducts.count %></span> Finalizadas</a></li>
+          <% if @myproducts.present? %>
+            <li role="presentation"><a href="#ofertas" aria-controls="messages" role="tab" data-toggle="tab">
+             Mis Ofertas</a></li>
+          <% end %>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="actuales">
-            <h2>Modelos que se subastan actualmente:</h2>
-            <p>Selecciona el artículo que mas te agrade:</p>
+            <% if @activeproducts.present? %>
+              <h2>Modelos que se subastan actualmente:</h2>
+              <p>Selecciona el artículo que mas te agrade:</p>
             <% @activeproducts.each do |product| %>
               <div class="col-md-3 producto-ind">
                 <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
@@ -38,14 +42,18 @@
                   <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ofertar</a>
               </div>
             <% end %>
+            <% else %><br>
+              <div class="alert alert-warning">No hay productos para mostrar</div>
+            <% end %>
           </div>
           <div role="tabpanel" class="tab-pane" id="proximas">
+            <% if @notavailableproducts.present? %>
             <h2>Modelos que subastaremos próximamente</h2>
             <p>No pierdas la oportunidad de formar parte de nuestra siguiente subasta, con los siguientes modelos:</p>
             <% @notavailableproducts.each do |product| %>
-              <div class="col-md-3 producto-ind" style="opacity: 0.7">
+              <div class="col-md-3 producto-ind">
                 <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
-                <span class="timestart" style="opacity: 1; color:green">
+                <span class="timestart" style="color:green">
                   Comienza en <%= distance_of_time_in_words(product.finish_at,Time.now) %>
                 </span>
 
@@ -55,31 +63,42 @@
                   <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver producto</a>
               </div>
             <% end %>
+            <% else %><br>
+              <div class="alert alert-warning">No hay productos para mostrar</div>
+            <% end %>
           </div>
           <div role="tabpanel" class="tab-pane" id="finalizadas">
+            <% if @endedproducts.present? %>
             <h2>Modelos que se subastaron anteriormente</h2>
             <p>Los siguientes modelos fueron parte de nuestra anterior subasta:</p>
             <% @endedproducts.each do |product| %>
-              <div class="col-md-3 producto-ind" style="opacity: 0.7">
-               <h6><%= product.name %></h6>
+              <div class="col-md-3 producto-ind">
+                <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
               <span class="timeend">Finalizó hace <%= distance_of_time_in_words(product.finish_at,Time.now) %></span>
-                <%= image_tag product.image, class:'img-responsive'%>
+                
+                  <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
                   
                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %></strong>  <%= product.auctions.count == 1 ? "Oferta" : "Ofertas" %> </span>
                   <br>
                   <span class="tus-ofertas"><%= auctionExists(cookies[:iduser], product.id) %></span>
                    <% if product.auctions.present? %><br>
                     Oferta más alta: <span class="max-offer"><%= number_to_currency(product.auctions.maximum(:amount), precision: 0)%></span>
+                    <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver Ganadores</a>
                   <% else %>
                   <br>
-                    Sin ofertas
+                    &nbsp;
+                    <a href="/products/<%= product.id %>" class="btn btn-default btn-ofertar">No hubo ganadores</a>
                   <% end %>
                   <br>    
                   <!--a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver ganadores</a--> 
               </div>
             <% end %>
+            <% else %><br>
+              <div class="alert alert-warning">No hay productos para mostrar</div>
+            <% end %>
           </div>
           <div role="tabpanel" class="tab-pane" id="ofertas">
+            <% if @myproducts.present? %>
             <h2>Haz ofertado:</h2>
             <% @myproducts.each do |product| %>
               <div class="col-md-3 producto-ind">
@@ -94,6 +113,9 @@
                   <br>     
                   <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver Producto</a>
               </div>
+            <% end %>
+            <% else %><br>
+              <div class="alert alert-warning">No hay productos para mostrar</div>
             <% end %>
           </div>
         </div>
