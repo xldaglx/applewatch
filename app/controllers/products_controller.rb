@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     end
     if @product.finish_at < Time.now
       @offerended = 3 #Finalizo
-      @winners = @product.auctions.select('MAX(auctions.amount) as amount, user_id').group(:user_id).all.order('auctions.amount DESC').limit(@product.qty)
+      @winners = @product.auctions.select('MAX(auctions.amount) as amount, auctions.user_id').group(:user_id).all.order('amount DESC').limit(@product.qty)
     end
   end
 
