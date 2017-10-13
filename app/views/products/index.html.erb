@@ -57,9 +57,16 @@
                   Comienza en <%= distance_of_time_in_words(product.finish_at,Time.now) %>
                 </span>
 
-                  <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
-                  <br>     
-                  Oferta comienza en:  <%= number_to_currency(product.price) %><br>
+                  <a href="/products/<%= product.id %>">
+                    <% if product.imagenurl.present? %>
+                    <%= image_tag product.imagenurl, class:"img-responsive", style: "min-height:199px; max-height:199px"%>
+                    <% else %>
+                    <%= image_tag product.image, class:"img-responsive" %>
+                    <% end %>             
+                  </a>
+                  <br>
+                  Precio en tienda: <%= number_to_currency(product.price_correa, precision: 0) %><br>
+                  Oferta comienza en: <strong> <%= number_to_currency(product.price, precision: 0) %>   </strong>
                   <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver producto</a>
               </div>
             <% end %>

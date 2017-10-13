@@ -192,7 +192,7 @@ body{
 	margin:15px 0px;
 }
 h6 {
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 div.rules{
   font-family: BestBuy Regular !important;
@@ -203,4 +203,7 @@ div.rules{
   font-family: BestBuy Bold !important;
   font-size: 25px !important;
   text-align: left !important
+}
+.productos-ind img{
+  min-height:150px;
 }

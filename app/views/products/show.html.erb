@@ -9,7 +9,12 @@
         <h2><%= @product.name %></h2>
         <div class="row detalles">
           <div class="col-md-5">
+            <% if @product.imagenurl.present? %>
+            <%= image_tag @product.imagenurl, class:"img-responsive img-detalle" %>
+            <% else %>
             <%= image_tag @product.image, class:"img-responsive img-detalle" %>
+            <% end %>
+            <p class="help-block">Imagenes ilustrativas</p>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-6">

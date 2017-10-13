@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009015559) do
+ActiveRecord::Schema.define(version: 20171013151022) do
 
-  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "amount"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171009015559) do
     t.index ["user_id"], name: "index_auctions_on_user_id", using: :btree
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
     t.string   "price"
@@ -34,12 +34,14 @@ ActiveRecord::Schema.define(version: 20171009015559) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "qtycorrea"
     t.datetime "finish_at"
     t.datetime "start_at"
+    t.string   "model"
+    t.string   "sku"
+    t.string   "imagenurl"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
     t.string   "name"
     t.string   "middle"
