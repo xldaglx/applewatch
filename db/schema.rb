@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171013151022) do
 
-  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "amount"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20171013151022) do
     t.index ["user_id"], name: "index_auctions_on_user_id", using: :btree
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
-    t.string   "description"
+    t.string   "description",        limit: 3000
     t.string   "price"
     t.string   "price_correa"
     t.integer  "qty"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20171013151022) do
     t.string   "imagenurl"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "email"
     t.string   "name"
     t.string   "middle"
