@@ -2,41 +2,43 @@
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-3 login">
-				<form class="loginForm">
-					<div class="input-group">
-						<p>No. de Usuario <b>AA</b>:</p>
-						<input type="text" id="name" class="form-control campo-login" placeholder="AAXXXXXX" value="">
-						<p>Correo elctrónico:</p>
-						<input type="text" id="email" class="form-control campo-login" placeholder="usuario@bestbuy.com" value="">
-						<input type="button" id="submit" class="form-control btn-login" value="Ingresar">
-					</div>
-					&nbsp;
-					<div class="row" id="alerta-roja">
+		<form class="form-signin loginForm" method="post">
+			<h2 class="form-signin-heading">Acceso</h2>
+			<input type="text" id='name' class="form-control"
+				placeholder="Usuario: aaxxxxxx" required="required" autofocus="autofocus">
+			<input type="email" id='email' class="form-control"
+				placeholder="Email: usuario@bestbuy.com" required="required">
+			<div style="padding-top: 5px;"></div>
+			<button class="btn btn-lg btn-primary btn-block btn-login" id="submit"
+				type="submit">Ingresar</button>
+			<div style="padding-top: 5px;"></div>	
+			<div class="row" id="alerta-roja">
 					  <div class="alerta-roja" id="msg" style="display: none;"></div>
-					</div>
+			</div>
+		</form>
 	</div>
 	<div class="col-md-1"></div>
-	<div class="col-md-6 instrucciones-login">
+	<div class="col-md-7 instrucciones-login rules">
  
-		<h1>Condiciones de la Subasta:</h1>
+		<p class="span-title">Condiciones de la Subasta:</p>
 		
- 		<p>La subasta de Apple Watch consiste en subastar los artículos comenzando con el 30% de su costo. El pago de cada artículo se descontara <strong>vía nómina</strong>.</p>
+ 		<p>La subasta consiste en pujar por los artículos comenzando con el 30% de su costo. <br>El pago de cada artículo se descontara <strong>vía nómina</strong>.</p>
  		<p>Con el monto recaudado se hará una donación a:<p>
  			<ul>
- 				<li>El  “Teletón” pagando a Juan Carlos  su tratamiento de  Sindrome de Down por un año.</li>
- 				<li>Donando a la fundación “Ser Humano A.C.”  </li>
- 				<li>Subsidiando parte de la fiesta de Fin de año de Corporativo</li>
+ 				<li>El  "Teletón" pagando a Juan Carlos  su tratamiento de  Sindrome de Down por un año.</li>
+ 				<li>Donando a la fundación "Ser Humano A.C."  </li>
+ 				<li>Subsidiando parte de la fiesta de Fin de año de Corporativo.</li>
  			</ul>
-		<h1>Cómo participar?</h1>
+		<p class="span-title">¿Cómo participar?</p>
 		<ul>
 			<li>En la plataforma encontraras los diferentes modelos disponibles para pujar</li>
-			<li>Las pujas más altas en el tiempo establecido para cada artículo, serán las ganadoras. Ejemplo: si existen 5 relojes del mismo modelo, las 5 pujas más altas serán las ganadoras de ese artículo.</li>
+			<li>Las pujas más altas en el tiempo establecido para cada artículo, serán las ganadoras. Ejemplo: si existen 5 artículos del mismo modelo, las 5 pujas más altas serán las ganadoras de ese artículo.</li>
 			<li>Puedes pujar las veces que quieras por un mismo artículo, pero solo la puja más alta será considerada.</li>
 			<li>Puedes pujar en diferentes artículos, pero solo puedes ganar 1 artículo del mismo modelo. Ejemplo.</li>
 			<li>En caso de que tu aportación sea mayor a $3,000, se puede aplicar el descuento en tres catorcenas, por lo que no tendrás que pagar todo en una sola exhibición.</li>
-			<li>La subasta estará activa apartir del jueves 19 de octubre a partir de las 9:00 y hasta las 12:00, pasando este horario nadie podrá subastar.</li>
+			<li>La subasta estará activa apartir del jueves 19 de octubre a partir de las 9:00 y hasta las 12:00 hrs, pasando este horario nadie podrá subastar.</li>
 			<li>En caso de hacer una devolución solo podrás hacerlo el martes 24 de octubre.</li>
-			<li>Importante considerar que estos artículos <strong>no tienen garantía</strong> ni con el proveedor, ni con Best Buy</li>
+			<li>Importante considerar que estos artículos <strong>no tienen garantía</strong> ni con el proveedor, ni con Best Buy.</li>
 		</ul>
  
 	</div>
