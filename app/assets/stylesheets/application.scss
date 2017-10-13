@@ -16,17 +16,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@font-face { font-family: 'BestBuy Regular'; src: font-url('fonts/AvenirNextforBestBuy-Regular..eot');
-src: font-url('fonts/AvenirNextforBestBuy-Regular..eot?iefix') format('eot'),
-font-url('fonts/AvenirNextforBestBuy-Regular..woff2') format('woff2'),
-font-url('fonts/AvenirNextforBestBuy-Regular..ttf') format('truetype'),
-font-url('fonts/AvenirNextforBestBuy-Regular..svg#AvenirNextforBestBuy-Regular') format('svg'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'BestBuy Regular'; src: url('fonts/AvenirNextforBestBuy-Regular.eot');
+src: url('fonts/AvenirNextforBestBuy-Regular.eot?iefix') format('eot'),
+url('fonts/AvenirNextforBestBuy-Regular.woff') format('woff'),
+url('fonts/AvenirNextforBestBuy-Regular.ttf') format('truetype'),
+url('fonts/AvenirNextforBestBuy-Regular.svg#AvenirNextforBestBuy-Regular') format('svg'); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: 'BestBuy Bold'; src: font-url('fonts/AvenirNextforBestBuy-Bold..eot');
-src: font-url('fonts/AvenirNextforBestBuy-Bold..eot?iefix') format('eot'),
-font-url('fonts/AvenirNextforBestBuy-Bold..woff2') format('woff2'),
-font-url('fonts/AvenirNextforBestBuy-Bold..ttf') format('truetype'),
-font-url('fonts/AvenirNextforBestBuy-Bold..svg#AvenirNextforBestBuy-Bold') format('svg'); font-weight: bold; font-style: bold; }
+@font-face { font-family: 'BestBuy Bold'; src: url('fonts/AvenirNextforBestBuy-Bold.eot');
+src: url('fonts/AvenirNextforBestBuy-Bold.eot?iefix') format('eot'),
+url('fonts/AvenirNextforBestBuy-Bold.woff') format('woff'),
+url('fonts/AvenirNextforBestBuy-Bold.ttf') format('truetype'),
+url('fonts/AvenirNextforBestBuy-Bold.svg#AvenirNextforBestBuy-Bold') format('svg'); font-weight: bold; font-style: bold; }
 
 body{
         margin-bottom: 50px;
