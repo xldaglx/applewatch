@@ -61,7 +61,7 @@
                     <% if product.imagenurl.present? %>
                     <%= image_tag product.imagenurl, class:"img-responsive", style: "min-height:199px; max-height:199px"%>
                     <% else %>
-                    <%= image_tag product.image, class:"img-responsive" %>
+                    <%= image_tag product.image, class:"img-responsive", style: "min-height:199px; max-height:199px" %>
                     <% end %>             
                   </a>
                   <br>
