@@ -25,7 +25,12 @@
               <div class="col-md-3 producto-ind">
                 <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
                 <span class="timeend">Finaliza en <%= distance_of_time_in_words(Time.now, product.finish_at) %></span>
-                  <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+                  <a href="/products/<%= product.id %>">
+                    <% if product.imagenurl.present? %>
+                    <%= image_tag product.imagenurl, class:"img-responsive", style: "min-height:199px; max-height:199px"%>
+                    <% else %>
+                    <%= image_tag product.image, class:"img-responsive", style: "min-height:199px; max-height:199px" %>
+                    <% end %>     </a>
                   
                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %>
                   </strong> <%= product.auctions.count == 1 ? "Oferta" : "Ofertas" %> hasta ahora</span>
@@ -83,7 +88,12 @@
                 <a href="/products/<%= product.id %>"><h6><%= product.name %></h6></a>
               <span class="timeend">Finalizó hace <%= distance_of_time_in_words(product.finish_at,Time.now) %></span>
                 
-                  <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+                  <a href="/products/<%= product.id %>">
+                    <% if product.imagenurl.present? %>
+                    <%= image_tag product.imagenurl, class:"img-responsive", style: "min-height:199px; max-height:199px"%>
+                    <% else %>
+                    <%= image_tag product.image, class:"img-responsive", style: "min-height:199px; max-height:199px" %>
+                    <% end %>     </a>
                   
                   <span class="no-ofertas"><span class="glyphicon glyphicon-hand-up"></span> <strong><%= product.auctions.count %></strong>  <%= product.auctions.count == 1 ? "Oferta" : "Ofertas" %> </span>
                   <br>
@@ -116,7 +126,12 @@
               <% if product.finish_at >= Time.now && product.start_at <= Time.now %>
               <span class="timeend">Finaliza en <%= distance_of_time_in_words(product.finish_at, Time.now) %></span>
               <% end %>
-                  <a href="/products/<%= product.id %>"><%= image_tag product.image, class:'img-responsive'%></a>
+                  <a href="/products/<%= product.id %>">
+                    <% if product.imagenurl.present? %>
+                    <%= image_tag product.imagenurl, class:"img-responsive", style: "min-height:199px; max-height:199px"%>
+                    <% else %>
+                    <%= image_tag product.image, class:"img-responsive", style: "min-height:199px; max-height:199px" %>
+                    <% end %>     </a>
                   <br>     
                   <a href="/products/<%= product.id %>" class="btn btn-primary btn-ofertar">Ver Producto</a>
               </div>
