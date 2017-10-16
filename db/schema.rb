@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013151022) do
+ActiveRecord::Schema.define(version: 20171016195549) do
 
   create_table "auctions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 20171013151022) do
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
-    t.string   "description",        limit: 3000
+    t.string   "description"
     t.string   "price"
     t.string   "price_correa"
     t.integer  "qty"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20171013151022) do
     t.string   "middle"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "useraa"
     t.integer  "admin"
     t.datetime "last_seen_at"
+    t.string   "useraa"
   end
 
   add_foreign_key "auctions", "products"
